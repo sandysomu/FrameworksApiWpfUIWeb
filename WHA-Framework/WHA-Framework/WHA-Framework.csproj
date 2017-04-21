@@ -138,6 +138,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WHAdataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DBUtilities\FrameworkDB" />
     <None Include="DBUtilities\WHAdataModel.edmx.diagram">
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </None>
@@ -153,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\StepLibrary\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

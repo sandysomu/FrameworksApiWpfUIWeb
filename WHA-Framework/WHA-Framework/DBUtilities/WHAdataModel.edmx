@@ -9,9 +9,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="Id" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="middleName" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityContainer Name="FrameworkDBModelStoreContainer">
           <EntitySet Name="Temporary" EntityType="Self.Temporary" store:Type="Tables" />
@@ -30,6 +31,7 @@
           <Property Name="Id" Type="Int64" Nullable="false" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="middleName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -40,6 +42,7 @@
           <EntitySetMapping Name="Temporaries">
             <EntityTypeMapping TypeName="FrameworkDBModel.Temporary">
               <MappingFragment StoreEntitySet="Temporary">
+                <ScalarProperty Name="middleName" ColumnName="middleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

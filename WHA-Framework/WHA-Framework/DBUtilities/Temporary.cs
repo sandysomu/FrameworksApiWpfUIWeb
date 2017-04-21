@@ -17,5 +17,6 @@ namespace WHA_Framework.DBUtilities
         public long Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string middleName { get; set; }
     }
 }
