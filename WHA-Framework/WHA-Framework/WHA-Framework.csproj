@@ -84,6 +84,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DBUtilities\Temporary.cs">
+      <DependentUpon>WHAdataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DBUtilities\WHAdataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

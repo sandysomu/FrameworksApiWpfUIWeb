@@ -25,5 +25,6 @@ namespace WHA_Framework.DBUtilities
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Temporary> Temporaries { get; set; }
     }
 }

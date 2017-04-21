@@ -4,20 +4,49 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FrameworkDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Sandy\wha-framework\FrameworkDB" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="FrameworkDBModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="FrameworkDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Sandy\wha-framework\FrameworkDB" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Temporary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="integer" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FrameworkDBModelStoreContainer">
+          <EntitySet Name="Temporary" EntityType="Self.Temporary" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FrameworkDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="FrameworkDBEntities" annotation:LazyLoadingEnabled="true" />
+        <EntityContainer Name="FrameworkDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Temporaries" EntityType="FrameworkDBModel.Temporary" />
+        </EntityContainer>
+        <EntityType Name="Temporary">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FrameworkDBModelStoreContainer" CdmEntityContainer="FrameworkDBEntities" />
+        <EntityContainerMapping StorageEntityContainer="FrameworkDBModelStoreContainer" CdmEntityContainer="FrameworkDBEntities" >
+          <EntitySetMapping Name="Temporaries">
+            <EntityTypeMapping TypeName="FrameworkDBModel.Temporary">
+              <MappingFragment StoreEntitySet="Temporary">
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
