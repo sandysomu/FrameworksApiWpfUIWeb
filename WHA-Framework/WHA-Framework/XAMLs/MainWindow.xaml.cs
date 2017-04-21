@@ -24,5 +24,71 @@ namespace WHA_Framework
         {
             InitializeComponent();
         }
+        public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            // List<string> data = new List<string>();
+
+            //using (var db = new WHAprojectDBEntities())
+            //{
+            //    var comboBox = sender as ComboBox;
+            //    data = (from g in db.tblBankLists select g.BankName).ToList();
+            //    comboBox.ItemsSource = data;
+            //    comboBox.SelectedIndex = 0;
+            //    db.Dispose();
+            //}
+
+        }
+
+        private void TransTypeComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            //List<string> data = new List<string>();
+            //using (var db = new WHAprojectDBEntities())
+            //{
+            //    var comboBox = sender as ComboBox;
+            //    data = (from g in db.tblTransactionTypes select g.TransactionTypeName).ToList();
+            //    comboBox.ItemsSource = data;
+            //    comboBox.SelectedIndex = 0;
+            //    db.Dispose();
+            //}
+        }
+
+
+
+        private void AccountNameCombo_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            //List<string> data = new List<string>();
+            //using (var db = new WHAprojectDBEntities())
+            //{
+            //    var comboBox = sender as ComboBox;
+            //    data = (from g in db.tblAccountNames select g.AccountName).ToList();
+            //    comboBox.ItemsSource = data;
+            //    comboBox.SelectedIndex = 0;
+            //    db.Dispose();
+            //}
+
+        }
+
+
+
+        public void TransButton_Click(object sender, RoutedEventArgs e)
+        {
+
+
+
+
+
+
+            //var tsy = new Transactions()
+            //    .GetBankName(FinanceListComboBox.SelectedItem.ToString())
+            //    .GetTransactionType(TransTypeComboBox.SelectedItem.ToString())
+            //    .GetTransactionDescription(TransReasonTextBox.Text)
+            //    .GetAccountName(AccountNameCombo.SelectedItem.ToString())
+            //    .GetAmount(Convert.ToInt32(AmountTextBox.Text));
+        }
+
+        private void AmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

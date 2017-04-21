@@ -7,6 +7,49 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TextBlock x:Name="FinanceListText" HorizontalAlignment="Left" Margin="10,274,0,0" TextWrapping="Wrap" Text="Financial Entity" VerticalAlignment="Top"/>
+        <ComboBox x:Name="FinanceListComboBox" Loaded="FinanceListComboBox_Loaded"  HorizontalAlignment="Left" Margin="12,290,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.033"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <TextBlock x:Name="TransType" HorizontalAlignment="Left" Margin="147,274,0,0" TextWrapping="Wrap" Text="Transaction Type" VerticalAlignment="Top"/>
+        <ComboBox x:Name="TransTypeComboBox" Loaded="TransTypeComboBox_Loaded" HorizontalAlignment="Left" Margin="150,291,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Height="22">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.033"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <TextBlock x:Name="TransReason" HorizontalAlignment="Left" Margin="287,277,0,0" TextWrapping="Wrap" Text="Enter Trasaction Reason" VerticalAlignment="Top"/>
+        <TextBox x:Name="TransReasonTextBox" HorizontalAlignment="Left" Height="19" Margin="287,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
+        <Button x:Name="TransButton" Content="Submit" Click="TransButton_Click" HorizontalAlignment="Left" Margin="438,292,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="AccountNameText" HorizontalAlignment="Left" Margin="10,210,0,0" TextWrapping="Wrap" Text="AccountName" VerticalAlignment="Top"/>
+        <ComboBox x:Name="AccountNameCombo" Loaded="AccountNameCombo_OnLoaded" HorizontalAlignment="Left" Margin="12,234,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.033"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+        </ComboBox>
+        <TextBlock x:Name="AmountText" HorizontalAlignment="Left" Margin="147,209,0,0" TextWrapping="Wrap" Text="Enter Amount" VerticalAlignment="Top"/>
+        <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Height="19" Margin="147,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" TextChanged="AmountTextBox_TextChanged"/>
+        <Button x:Name="CommonWealthButton" Content="Commonwealth Bank"  HorizontalAlignment="Left" Margin="14,105,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="CitiButton" Content="Citi Bank"  HorizontalAlignment="Left" Margin="14,153,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="SelectButton" Content="Select Union"  HorizontalAlignment="Left" Margin="184,153,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="HSBCButton" Content="HSBC Credit Card"  HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="126"/>
+        <TextBlock x:Name="PageHeadingText" FontSize="17" FontStyle="Italic" Background="Beige"  HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap" 
+                   Text="Please click on any bank to see balance and last 10 transactions" VerticalAlignment="Top"/>
     </Grid>
 </Window>
