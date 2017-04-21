@@ -12,22 +12,13 @@ namespace WHA.Test
     [TestFixture]
     class Quicktest
     {
-
+        List<string> data = new List<string>();
 
         [Test]
         public void Test()
         {
-
-            //using (var db = new WHAprojectDBEntities())
-            //{
-            //    db.temps.Add(new temp() {FirstName = "Haren", Id = 3, SurName = "Singh"});
-            //    db.Dispose();
-
-            //}
-
-            //List<string> data = new List<string>();
-
             
+
         }
 
     }
