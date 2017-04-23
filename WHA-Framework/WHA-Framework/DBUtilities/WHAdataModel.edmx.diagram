@@ -5,7 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="29015b091e54486695cb918eab806604" Name="Diagram1" >
-        <EntityTypeShape EntityType="FrameworkDBModel.Temporary" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FrameworkDBModel.tblAccountName" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="FrameworkDBModel.tblBank" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="FrameworkDBModel.tblTransaction" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="FrameworkDBModel.tblTransactionType" Width="1.5" PointX="0.75" PointY="4.625" />
+        <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_2_0" />
+        <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_0_0" />
+        <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_1_0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

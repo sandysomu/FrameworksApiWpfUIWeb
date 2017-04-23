@@ -84,7 +84,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DBUtilities\Temporary.cs">
+    <Compile Include="Common\StepLibrary\TableChanges.cs" />
+    <Compile Include="DBUtilities\DTOs\Transactions.cs" />
+    <Compile Include="DBUtilities\tblAccountName.cs">
+      <DependentUpon>WHAdataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBUtilities\tblBank.cs">
+      <DependentUpon>WHAdataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBUtilities\tblTransaction.cs">
+      <DependentUpon>WHAdataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBUtilities\tblTransactionType.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBUtilities\WHAdataModel.Context.cs">
@@ -149,16 +160,17 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Common\StepLibrary\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="DBUtilities\Linq Queries.txt" />
     <Content Include="DBUtilities\WHAdataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>

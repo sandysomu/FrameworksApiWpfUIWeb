@@ -25,6 +25,9 @@ namespace WHA_Framework.DBUtilities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Temporary> Temporaries { get; set; }
+        public virtual DbSet<tblAccountName> tblAccountNames { get; set; }
+        public virtual DbSet<tblBank> tblBanks { get; set; }
+        public virtual DbSet<tblTransaction> tblTransactions { get; set; }
+        public virtual DbSet<tblTransactionType> tblTransactionTypes { get; set; }
     }
 }
