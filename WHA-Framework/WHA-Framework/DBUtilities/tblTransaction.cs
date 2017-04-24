@@ -20,6 +20,7 @@ namespace WHA_Framework.DBUtilities
         public Nullable<int> ACnameID { get; set; }
         public Nullable<double> Amount { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public string TransDesc { get; set; }
     
         public virtual tblAccountName tblAccountName { get; set; }
         public virtual tblBank tblBank { get; set; }

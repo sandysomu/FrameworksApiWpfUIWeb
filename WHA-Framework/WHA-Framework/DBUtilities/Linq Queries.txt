@@ -5,5 +5,6 @@ var query = from it in context.Companies
             select it
 
 
-			Convert.ToInt64(from b in db.tblTransactionTypes where b.TransactionTypeName == tsy.TransType select b.TransactionTypeId),
+
+Convert.ToInt64(from b in db.tblTransactionTypes where b.TransactionTypeName == tsy.TransType select b.TransactionTypeId),
 

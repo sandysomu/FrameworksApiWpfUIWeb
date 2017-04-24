@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WHA_Framework.Annotations;
 using WHA_Framework.Common.StepLibrary;
 using WHA_Framework.DBUtilities;
 using WHA_Framework.DBUtilities.DTOs;
@@ -21,7 +24,7 @@ namespace WHA_Framework
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public MainWindow()
         {
@@ -75,12 +78,7 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-
-          //  updatetables();
-
-
-
-
+          
             var tsy = new Transactions()
                 .GetBankName(FinanceListComboBox.SelectedItem.ToString())
                 .GetTransactionType(TransTypeComboBox.SelectedItem.ToString())
@@ -97,6 +95,40 @@ namespace WHA_Framework
         {
 
         }
+
+        private void TransReasonTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //[NotifyPropertyChangedInvocator]
+        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+        //private Visibility _balancePageVisible = Visibility.Collapsed;
+        //public Visibility BalancePageVisible
+        //{
+        //    get { return _balancePageVisible; }
+        //    set
+        //    {
+        //        _balancePageVisible = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        //private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    BalancePageVisible = Visibility.Visible;
+        //}
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    BalancePageVisible = Visibility.Collapsed;
+        //}
     }
 
 

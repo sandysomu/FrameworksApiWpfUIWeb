@@ -113,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Test\Quicktest.cs" />
     <Page Include="XAMLs\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

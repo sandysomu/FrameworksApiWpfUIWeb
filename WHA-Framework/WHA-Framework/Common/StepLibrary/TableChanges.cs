@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Media.Animation;
@@ -30,11 +31,14 @@ namespace WHA_Framework.Common.StepLibrary
                     Amount = Convert.ToInt64(tsy.Amount),
                     Date = tsy.Date,
                     ACnameID = (from b in db.tblAccountNames where b.ACname == tsy.AcName select b.ACnameID).First(),
+                    TransDesc = tsy.TransDesc
                    
                 };
 
 
                 db.tblTransactions.Add(tem);
+                
+                db.Entry(tem).State=EntityState.Modified;
 
                 db.SaveChanges();
 

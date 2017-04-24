@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WHA_Framework"
         mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid >
+        <Grid>
         <TextBlock x:Name="FinanceListText" HorizontalAlignment="Left" Margin="10,274,0,0" TextWrapping="Wrap" Text="Financial Entity" VerticalAlignment="Top"/>
         <ComboBox x:Name="FinanceListComboBox" Loaded="FinanceListComboBox_Loaded"  HorizontalAlignment="Left" Margin="12,290,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
             <ComboBox.RenderTransform>
@@ -30,7 +32,7 @@
             </ComboBox.RenderTransform>
         </ComboBox>
         <TextBlock x:Name="TransReason" HorizontalAlignment="Left" Margin="287,277,0,0" TextWrapping="Wrap" Text="Enter Trasaction Reason" VerticalAlignment="Top"/>
-        <TextBox x:Name="TransReasonTextBox" HorizontalAlignment="Left" Height="19" Margin="287,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="TransReasonTextBox" HorizontalAlignment="Left" Height="19" Margin="287,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" TextChanged="TransReasonTextBox_TextChanged"/>
         <Button x:Name="TransButton" Content="Submit" Click="TransButton_Click" HorizontalAlignment="Left" Margin="438,292,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock x:Name="AccountNameText" HorizontalAlignment="Left" Margin="10,210,0,0" TextWrapping="Wrap" Text="AccountName" VerticalAlignment="Top"/>
         <ComboBox x:Name="AccountNameCombo" Loaded="AccountNameCombo_OnLoaded" HorizontalAlignment="Left" Margin="12,234,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
@@ -51,5 +53,11 @@
         <Button x:Name="HSBCButton" Content="HSBC Credit Card"  HorizontalAlignment="Left" Margin="184,105,0,0" VerticalAlignment="Top" Width="126"/>
         <TextBlock x:Name="PageHeadingText" FontSize="17" FontStyle="Italic" Background="Beige"  HorizontalAlignment="Left" Margin="10,51,0,0" TextWrapping="Wrap" 
                    Text="Please click on any bank to see balance and last 10 transactions" VerticalAlignment="Top"/>
+        </Grid>
+        <!--<Grid Background="Aqua" Visibility="{Binding BalancePageVisible}">
+            <Label Content="Windows2"></Label>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="167,105,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        </Grid>-->
+        
     </Grid>
 </Window>
