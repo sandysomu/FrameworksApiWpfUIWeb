@@ -84,12 +84,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\StepLibrary\IndividualEntityReport.cs" />
     <Compile Include="Common\StepLibrary\TableChanges.cs" />
     <Compile Include="DBUtilities\DTOs\Transactions.cs" />
     <Compile Include="DBUtilities\tblAccountName.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBUtilities\tblBank.cs">
+      <DependentUpon>WHAdataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBUtilities\tblIndividualEntityTran.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DBUtilities\tblTransaction.cs">

@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using WHA_Framework.DBUtilities;
 using System.Diagnostics;
+using WHA_Framework.Common.StepLibrary;
+
 //using WHA.DBUtilities;
 
 
@@ -45,9 +47,28 @@ namespace WHA.Test
                     db.SaveChanges();
                 }
             }
+        }
 
+        [Test]
+        public void Test1()
+        {
+            List<IndividualEntityReport> list = new List<IndividualEntityReport>();
+            using (var db = new FrameworkDBEntities())
+            {
+                foreach (var tem in db.tblTransactions)
+                {
+                    list.Add(new IndividualEntityReport()
+                    {
+                        AcName = (from p in db.tblAccountNames
+                                  join s in db.tblTransactions ) , TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit"
+                    });
+                }
+            }
+            list.Add(new IndividualEntityReport() { AcName = "Something", TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
+            list.Add(new IndividualEntityReport() { AcName = "Something1", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
+            list.Add(new IndividualEntityReport() { AcName = "Something2", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "Deb0it" });
+
+        }
 
     }
-
-}
 }

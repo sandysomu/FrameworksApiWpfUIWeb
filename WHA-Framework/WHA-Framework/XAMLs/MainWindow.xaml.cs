@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,12 +25,14 @@ namespace WHA_Framework
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window//, INotifyPropertyChanged
     {
         public MainWindow()
         {
             InitializeComponent();
         }
+        
+
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -74,9 +77,7 @@ namespace WHA_Framework
 
         }
 
-
-
-        public void TransButton_Click(object sender, RoutedEventArgs e)
+    public void TransButton_Click(object sender, RoutedEventArgs e)
         {
           
             var tsy = new Transactions()
@@ -91,15 +92,32 @@ namespace WHA_Framework
             TableChanges.updateTables(tsy);
         }
 
-       private void AmountTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
         {
+          List<IndividualEntityReport> list = new List<IndividualEntityReport>();
+            //using (var db = new FrameworkDBEntities())
+            //{
+             
+            //}
+
+            list.Add(new IndividualEntityReport() {AcName = "Something", TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit"});
+            list.Add(new IndividualEntityReport() { AcName = "Something1", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
+            list.Add(new IndividualEntityReport() { AcName = "Something2", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "Deb0it" });
+
+
+            // var list = new ObservableCollection<IndividualEntityReport>();
+            // list.Add(new IndividualEntityReport() {AcName = "Something", TransID = 2, Amount = 30});
+
 
         }
 
-        private void TransReasonTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
+
+
+
+
+
+
 
         //public event PropertyChangedEventHandler PropertyChanged;
 
