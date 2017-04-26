@@ -14,11 +14,11 @@ namespace WHA_Framework.DBUtilities
     
     public partial class tblIndividualEntityTran
     {
-        public Nullable<int> TransId { get; set; }
+        public Nullable<long> TransId { get; set; }
         public string AccountName { get; set; }
         public string TransactionType { get; set; }
-        public Nullable<int> Amount { get; set; }
-        public Nullable<int> CurrentBalance { get; set; }
-        public int IndividualID { get; set; }
+        public Nullable<long> Amount { get; set; }
+        public Nullable<long> CurrentBalance { get; set; }
+        public long IndividualID { get; set; }
     }
 }

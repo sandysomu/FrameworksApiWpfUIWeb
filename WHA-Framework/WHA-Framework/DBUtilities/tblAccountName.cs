@@ -20,7 +20,7 @@ namespace WHA_Framework.DBUtilities
             this.tblTransactions = new HashSet<tblTransaction>();
         }
     
-        public Nullable<int> ACnameID { get; set; }
+        public int ACnameID { get; set; }
         public string ACname { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

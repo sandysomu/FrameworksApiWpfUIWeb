@@ -59,8 +59,11 @@ namespace WHA.Test
                 {
                     list.Add(new IndividualEntityReport()
                     {
-                        AcName = (from p in db.tblAccountNames
-                                  join s in db.tblTransactions ) , TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit"
+                        AcName = (from p in db.tblAccountNames where p.ACnameID == tem.ACnameID select p.ACname).ToString(),
+                        TransType = (from p in db.tblTransactionTypes where p.TransactionTypeId == tem.TranstionTypeId select p.TransactionTypeName).ToString(),
+                        Amount = tem.Amount.Value,
+                        TransID = tem.TransID
+
                     });
                 }
             }
