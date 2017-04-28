@@ -92,44 +92,46 @@
     <Compile Include="Common\StepLibrary\TableChanges.cs" />
     <Compile Include="DataMappings\DataMapper.cs" />
     <Compile Include="DataMappings\IDataMapper.cs" />
-    <Compile Include="DBUtilities\IntraBetEntities.cs" />
-    <Compile Include="DBUtilities\SqliteDB\tblAccountName.cs">
+    <Compile Include="Database\IntraBetEntities.cs" />
+    <Compile Include="Database\SqliteDB\tblAccountName.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\tblBank.cs">
+    <Compile Include="Database\SqliteDB\tblBank.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\tblIndividualEntityTran.cs">
+    <Compile Include="Database\SqliteDB\tblIndividualEntityTran.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\tblTransaction.cs">
+    <Compile Include="Database\SqliteDB\tblTransaction.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\tblTransactionType.cs">
+    <Compile Include="Database\SqliteDB\tblTransactionType.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.Context.cs">
+    <Compile Include="Database\SqliteDB\WHAdataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.cs">
+    <Compile Include="Database\SqliteDB\WHAdataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.Designer.cs">
+    <Compile Include="Database\SqliteDB\WHAdataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Transactions.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Test\Quicktest.cs" />
     <Page Include="XAMLs\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Utilities\BankingService.cs" />
+    <Compile Include="Utilities\IBankingService.cs" />
     <Compile Include="XAMLs\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -157,11 +159,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBUtilities\SqliteDB\WHAdataModel.edmx">
+    <EntityDeploy Include="Database\SqliteDB\WHAdataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WHAdataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBUtilities\SqliteDB\WHAdataModel.edmx.diagram">
+    <None Include="Database\SqliteDB\WHAdataModel.edmx.diagram">
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -182,13 +184,13 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="DBUtilities\Linq Queries.txt" />
-    <Content Include="DBUtilities\SqliteDB\WHAdataModel.Context.tt">
+    <Resource Include="Database\Linq Queries.txt" />
+    <Content Include="Database\SqliteDB\WHAdataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
       <LastGenOutput>WHAdataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBUtilities\SqliteDB\WHAdataModel.tt">
+    <Content Include="Database\SqliteDB\WHAdataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
       <LastGenOutput>WHAdataModel.cs</LastGenOutput>

@@ -8,7 +8,8 @@ using NUnit.Framework;
 using WHA_Framework.DBUtilities;
 using System.Diagnostics;
 using WHA_Framework.Common.StepLibrary;
-using WHA_Framework.DBUtilities.SqliteDB;
+using WHA_Framework.Database.SqliteDB;
+
 
 //using WHA.DBUtilities;
 

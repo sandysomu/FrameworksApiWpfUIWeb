@@ -17,10 +17,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WHA_Framework.Annotations;
 using WHA_Framework.Common.StepLibrary;
+using WHA_Framework.Database.SqliteDB;
 using WHA_Framework.DataMappings;
 using WHA_Framework.DBUtilities;
-using WHA_Framework.DBUtilities.DTOs;
-using WHA_Framework.DBUtilities.SqliteDB;
+using WHA_Framework.Models;
+using WHA_Framework.Utilities;
 
 namespace WHA_Framework
 {
@@ -30,14 +31,15 @@ namespace WHA_Framework
     public partial class MainWindow : Window//, INotifyPropertyChanged
     {
         private IDataMapper _dataMapper;
+        private IBankingService _bankingService;
 
         public MainWindow()
         {
             InitializeComponent();
             _dataMapper = new DataMapper();
+            _bankingService = new BankingService();
         }
-
-
+        
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -66,8 +68,6 @@ namespace WHA_Framework
             }
         }
 
-
-
         private void AccountNameCombo_OnLoaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -84,19 +84,17 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-            //var tab = new tblTransaction() {};
-
-            var tsy = new Transactions()
-                .GetBankName(FinanceListComboBox.SelectedItem.ToString())
-                .GetTransactionType(TransTypeComboBox.SelectedItem.ToString())
-                .getTransDesc(TransReasonTextBox.Text)
-                .getAcName(AccountNameCombo.SelectedItem.ToString())
-                .getAmount(Convert.ToDouble(AmountTextBox.Text))
-                .getDate(DateTime.Now);
-
-            //  _dataMapper.Map<Transactions, tblTransaction>(tsy);
-
-            TableChanges.updateTblTransactions(tsy);
+            var transaction = new tblTransaction()
+            {
+                BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
+                ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
+                TranstionTypeId = _bankingService.GetTransInfo(TransTypeComboBox.SelectedItem.ToString()).TransactionTypeId,
+                Amount = (Convert.ToDouble(AmountTextBox.Text)),
+                TransDesc = TransReasonTextBox.Text,
+                Date = DateTime.Now
+            };
+            //  _dataMapper.Map<Transaction, tblTransaction>(tsy);
+            TableChanges.updateTblTransactions(transaction);
         }
 
 
@@ -130,13 +128,7 @@ namespace WHA_Framework
         }
     }
 
-
-
-
-
-
-
-
+  
 
     //public event PropertyChangedEventHandler PropertyChanged;
 

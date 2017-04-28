@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using WHA_Framework.DBUtilities;
 
-using WHA_Framework.DBUtilities.SqliteDB;
+
 
 
 namespace WHA_Framework.DataMappings
@@ -16,8 +16,8 @@ namespace WHA_Framework.DataMappings
             Mapper.Initialize(config =>
             {
                 //config.CreateMap<tblBank, Bank>();
-                //config.CreateMap<tblTransaction, Transactions>();
-                //config.CreateMap<Transactions, tblTransaction>();
+                //config.CreateMap<tblTransaction, Transaction>();
+                //config.CreateMap<Transaction, tblTransaction>();
             });
         }
         
