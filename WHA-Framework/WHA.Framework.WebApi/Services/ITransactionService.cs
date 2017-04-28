@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WHA.Framework.WebApi.Models;
+using WHA_Framework.Models;
 
 namespace WHA_Framework.Services
 {
-    public interface ITransactionService
-    {
-        Transaction GetTransaction(int id);
-        int PostTransaction(Transaction transaction);
-        void DeleteTransaction(int id);
-    }
+    //public interface ITransactionService
+    //{
+    //    Transaction GetTransaction(int id);
+
+    //    int PostTransaction(Transaction transaction);
+    //    void DeleteTransaction(int id);
+    //}
 }

@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WHA.Framework.WebApi.Models;
+using WHA_Framework.Models;
 using WHA_Framework.Services;
 
 namespace WHA.Framework.WebApi.Controllers
