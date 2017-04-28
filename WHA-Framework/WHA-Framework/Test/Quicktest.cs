@@ -9,6 +9,7 @@ using WHA_Framework.DBUtilities;
 using System.Diagnostics;
 using WHA_Framework.Common.StepLibrary;
 using WHA_Framework.Database.SqliteDB;
+using WHA_Framework.Services;
 
 
 //using WHA.DBUtilities;
@@ -54,35 +55,10 @@ namespace WHA.Test
         [Test]
         public void Test1()
         {
-            List<IndividualEntityReport> list = new List<IndividualEntityReport>();
-            using (var db = new FrameworkDBEntities())
-            {
-
-                Console.WriteLine(db.tblAccountNames.FirstOrDefault().ACname.ToString());
-
-
-
-
-
-
-
-                foreach (var tem in db.tblTransactions)
-                {
-                   
-                    //list.Add(new IndividualEntityReport()
-                    //{
-                    //    AcName = (from p in db.tblAccountNames where p.ACnameID == tem.ACnameID select p.ACname).ToString(),
-                    //    TransType = (from p in db.tblTransactionTypes where p.TransactionTypeId == tem.TranstionTypeId select p.TransactionTypeName).ToString(),
-                    //    Amount = tem.Amount.Value,
-                    //    TransID = tem.TransID
-                    //});
-                }
-            }
-            list.Add(new IndividualEntityReport() { AcName = "Something", TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
-            list.Add(new IndividualEntityReport() { AcName = "Something1", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
-            list.Add(new IndividualEntityReport() { AcName = "Something2", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "Deb0it" });
-
+            TransactionService some = new TransactionService();
+            var temp = some.GetTransaction(0);
         }
 
+       
     }
 }

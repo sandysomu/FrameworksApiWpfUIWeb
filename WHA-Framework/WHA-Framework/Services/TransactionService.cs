@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using NUnit.Framework.Internal;
 using WHA_Framework.Database.SqliteDB;
 using WHA_Framework.DataMappings;
@@ -12,7 +13,7 @@ namespace WHA_Framework.Services
 {
     public class TransactionService : ITransactionService
     {
-        private IDataMapper _dataMapper = new DataMapper();
+        
         public Transaction GetTransaction(int id)
         {
             tblTransaction tblTrans;
@@ -21,7 +22,9 @@ namespace WHA_Framework.Services
                 tblTrans = db.tblTransactions.FirstOrDefault(p => p.TransID == id);
             }
 
-            Transaction transaction = _dataMapper.Map<tblTransaction, Transaction>(tblTrans);
+            var transaction = Mapper.Map<Transaction>(tblTrans);
+            //Transaction transaction = _dataMapper.Map<tblTransaction, Transaction>(tblTrans);
+
             return transaction;
         }
 

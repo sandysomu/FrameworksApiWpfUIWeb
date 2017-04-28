@@ -5,6 +5,7 @@ namespace WHA_Framework.Models
 
     public class Transaction
     {
+        // public int TransID { get; set; } = 0;
         public int BankId { get; set; }
         public int ACnameID { get; set; }
         public int TranstionTypeId { get; set; }

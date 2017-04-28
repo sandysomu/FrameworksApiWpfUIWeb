@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using WHA_Framework.Database.SqliteDB;
 using WHA_Framework.DBUtilities;
-
-
+using WHA_Framework.Models;
 
 
 namespace WHA_Framework.DataMappings
@@ -16,14 +16,14 @@ namespace WHA_Framework.DataMappings
             Mapper.Initialize(config =>
             {
                 //config.CreateMap<tblBank, Bank>();
-                //config.CreateMap<tblTransaction, Transaction>();
-                //config.CreateMap<Transaction, tblTransaction>();
+                config.CreateMap<tblTransaction, Transaction>();
+              
             });
         }
         
         public TOut Map<TIn, TOut>(TIn data)
         {
-            throw new System.NotImplementedException();
+            return _mapper.Map<TOut>(data);
         }
 
         public void Map<TIn, TOut>(TIn source, TOut dest)
