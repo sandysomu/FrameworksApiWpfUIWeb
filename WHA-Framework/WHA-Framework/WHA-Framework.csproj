@@ -125,13 +125,14 @@
     </Compile>
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Services\ITransactionService.cs" />
     <Compile Include="Test\Quicktest.cs" />
     <Page Include="XAMLs\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Utilities\BankingService.cs" />
-    <Compile Include="Utilities\IBankingService.cs" />
+    <Compile Include="Services\BankingService.cs" />
+    <Compile Include="Services\IBankingService.cs" />
     <Compile Include="XAMLs\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>

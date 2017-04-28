@@ -84,7 +84,17 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-            var transaction = new tblTransaction()
+            //var transaction = new tblTransaction()
+            //{
+            //    BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
+            //    ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
+            //    TranstionTypeId = _bankingService.GetTransInfo(TransTypeComboBox.SelectedItem.ToString()).TransactionTypeId,
+            //    Amount = (Convert.ToDouble(AmountTextBox.Text)),
+            //    TransDesc = TransReasonTextBox.Text,
+            //    Date = DateTime.Now
+            //};
+
+            var transaction = new Transaction
             {
                 BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
                 ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
@@ -93,8 +103,10 @@ namespace WHA_Framework
                 TransDesc = TransReasonTextBox.Text,
                 Date = DateTime.Now
             };
-            //  _dataMapper.Map<Transaction, tblTransaction>(tsy);
-            TableChanges.updateTblTransactions(transaction);
+
+           var tblTransaction=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
+            TableChanges.updateTblTransactions(tblTransaction);
+
         }
 
 
