@@ -37,6 +37,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -86,37 +90,40 @@
     </ApplicationDefinition>
     <Compile Include="Common\StepLibrary\IndividualEntityReport.cs" />
     <Compile Include="Common\StepLibrary\TableChanges.cs" />
-    <Compile Include="DBUtilities\DTOs\Transactions.cs" />
-    <Compile Include="DBUtilities\tblAccountName.cs">
+    <Compile Include="DataMappings\DataMapper.cs" />
+    <Compile Include="DataMappings\IDataMapper.cs" />
+    <Compile Include="DBUtilities\IntraBetEntities.cs" />
+    <Compile Include="DBUtilities\SqliteDB\tblAccountName.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\tblBank.cs">
+    <Compile Include="DBUtilities\SqliteDB\tblBank.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\tblIndividualEntityTran.cs">
+    <Compile Include="DBUtilities\SqliteDB\tblIndividualEntityTran.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\tblTransaction.cs">
+    <Compile Include="DBUtilities\SqliteDB\tblTransaction.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\tblTransactionType.cs">
+    <Compile Include="DBUtilities\SqliteDB\tblTransactionType.cs">
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\WHAdataModel.Context.cs">
+    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\WHAdataModel.cs">
+    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DBUtilities\WHAdataModel.Designer.cs">
+    <Compile Include="DBUtilities\SqliteDB\WHAdataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Transactions.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Test\Quicktest.cs" />
     <Page Include="XAMLs\MainWindow.xaml">
@@ -150,11 +157,11 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBUtilities\WHAdataModel.edmx">
+    <EntityDeploy Include="DBUtilities\SqliteDB\WHAdataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WHAdataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBUtilities\WHAdataModel.edmx.diagram">
+    <None Include="DBUtilities\SqliteDB\WHAdataModel.edmx.diagram">
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -176,12 +183,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="DBUtilities\Linq Queries.txt" />
-    <Content Include="DBUtilities\WHAdataModel.Context.tt">
+    <Content Include="DBUtilities\SqliteDB\WHAdataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
       <LastGenOutput>WHAdataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBUtilities\WHAdataModel.tt">
+    <Content Include="DBUtilities\SqliteDB\WHAdataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WHAdataModel.edmx</DependentUpon>
       <LastGenOutput>WHAdataModel.cs</LastGenOutput>

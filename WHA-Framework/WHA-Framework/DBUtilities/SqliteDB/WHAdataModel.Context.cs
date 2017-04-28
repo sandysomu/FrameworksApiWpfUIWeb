@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA_Framework.DBUtilities
+namespace WHA_Framework.DBUtilities.SqliteDB
 {
     using System;
     using System.Data.Entity;

@@ -7,21 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA_Framework.DBUtilities
+namespace WHA_Framework.DBUtilities.SqliteDB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class tblAccountName
+    public partial class tblTransactionType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblAccountName()
+        public tblTransactionType()
         {
             this.tblTransactions = new HashSet<tblTransaction>();
         }
     
-        public int ACnameID { get; set; }
-        public string ACname { get; set; }
+        public int TransactionTypeId { get; set; }
+        public string TransactionTypeName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tblTransaction> tblTransactions { get; set; }

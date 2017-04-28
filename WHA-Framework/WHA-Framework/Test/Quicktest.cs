@@ -8,6 +8,7 @@ using NUnit.Framework;
 using WHA_Framework.DBUtilities;
 using System.Diagnostics;
 using WHA_Framework.Common.StepLibrary;
+using WHA_Framework.DBUtilities.SqliteDB;
 
 //using WHA.DBUtilities;
 
@@ -55,16 +56,25 @@ namespace WHA.Test
             List<IndividualEntityReport> list = new List<IndividualEntityReport>();
             using (var db = new FrameworkDBEntities())
             {
+
+                Console.WriteLine(db.tblAccountNames.FirstOrDefault().ACname.ToString());
+
+
+
+
+
+
+
                 foreach (var tem in db.tblTransactions)
                 {
-                    list.Add(new IndividualEntityReport()
-                    {
-                        AcName = (from p in db.tblAccountNames where p.ACnameID == tem.ACnameID select p.ACname).ToString(),
-                        TransType = (from p in db.tblTransactionTypes where p.TransactionTypeId == tem.TranstionTypeId select p.TransactionTypeName).ToString(),
-                        Amount = tem.Amount.Value,
-                        TransID = tem.TransID
-
-                    });
+                   
+                    //list.Add(new IndividualEntityReport()
+                    //{
+                    //    AcName = (from p in db.tblAccountNames where p.ACnameID == tem.ACnameID select p.ACname).ToString(),
+                    //    TransType = (from p in db.tblTransactionTypes where p.TransactionTypeId == tem.TranstionTypeId select p.TransactionTypeName).ToString(),
+                    //    Amount = tem.Amount.Value,
+                    //    TransID = tem.TransID
+                    //});
                 }
             }
             list.Add(new IndividualEntityReport() { AcName = "Something", TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });

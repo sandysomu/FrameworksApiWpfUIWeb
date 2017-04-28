@@ -17,8 +17,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WHA_Framework.Annotations;
 using WHA_Framework.Common.StepLibrary;
+using WHA_Framework.DataMappings;
 using WHA_Framework.DBUtilities;
 using WHA_Framework.DBUtilities.DTOs;
+using WHA_Framework.DBUtilities.SqliteDB;
 
 namespace WHA_Framework
 {
@@ -27,11 +29,14 @@ namespace WHA_Framework
     /// </summary>
     public partial class MainWindow : Window//, INotifyPropertyChanged
     {
+        private IDataMapper _dataMapper;
+
         public MainWindow()
         {
             InitializeComponent();
+            _dataMapper = new DataMapper();
         }
-        
+
 
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
         {
@@ -77,77 +82,91 @@ namespace WHA_Framework
 
         }
 
-    public void TransButton_Click(object sender, RoutedEventArgs e)
+        public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-          
+            //var tab = new tblTransaction() {};
+
             var tsy = new Transactions()
                 .GetBankName(FinanceListComboBox.SelectedItem.ToString())
                 .GetTransactionType(TransTypeComboBox.SelectedItem.ToString())
                 .getTransDesc(TransReasonTextBox.Text)
                 .getAcName(AccountNameCombo.SelectedItem.ToString())
                 .getAmount(Convert.ToDouble(AmountTextBox.Text))
-                .getDate(DateTime.Now)
-                ;
+                .getDate(DateTime.Now);
 
-            TableChanges.updateTables(tsy);
+            //  _dataMapper.Map<Transactions, tblTransaction>(tsy);
+
+            TableChanges.updateTblTransactions(tsy);
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
         {
-          List<IndividualEntityReport> list = new List<IndividualEntityReport>();
-            //using (var db = new FrameworkDBEntities())
-            //{
-             
-            //}
-
-            list.Add(new IndividualEntityReport() {AcName = "Something", TransID = 102340, Amount = 2032, CurrentBal = 23450, TransType = "De0bit"});
-            list.Add(new IndividualEntityReport() { AcName = "Something1", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "De0bit" });
-            list.Add(new IndividualEntityReport() { AcName = "Something2", TransID = 10234, Amount = 2032, CurrentBal = 23450, TransType = "Deb0it" });
-
-
-            // var list = new ObservableCollection<IndividualEntityReport>();
-            // list.Add(new IndividualEntityReport() {AcName = "Something", TransID = 2, Amount = 30});
-
 
         }
-
-
-
-
-
-
-
-
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //[NotifyPropertyChangedInvocator]
-        //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
-        //private Visibility _balancePageVisible = Visibility.Collapsed;
-        //public Visibility BalancePageVisible
-        //{
-        //    get { return _balancePageVisible; }
-        //    set
-        //    {
-        //        _balancePageVisible = value;
-        //        OnPropertyChanged();
-        //    }
-        //}
-
-        //private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    BalancePageVisible = Visibility.Visible;
-        //}
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    BalancePageVisible = Visibility.Collapsed;
-        //}
     }
 
 
+
+
+
+
+
+
+
+    //public event PropertyChangedEventHandler PropertyChanged;
+
+    //[NotifyPropertyChangedInvocator]
+    //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    //{
+    //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    //}
+
+    //private Visibility _balancePageVisible = Visibility.Collapsed;
+    //public Visibility BalancePageVisible
+    //{
+    //    get { return _balancePageVisible; }
+    //    set
+    //    {
+    //        _balancePageVisible = value;
+    //        OnPropertyChanged();
+    //    }
+    //}
+
+    //private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
+    //{
+    //    BalancePageVisible = Visibility.Visible;
+    //}
+
+    //private void Button_Click(object sender, RoutedEventArgs e)
+    //{
+    //    BalancePageVisible = Visibility.Collapsed;
+    //}
 }
+
+
+

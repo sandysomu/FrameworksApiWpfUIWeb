@@ -5,12 +5,13 @@ using System.Runtime.InteropServices;
 using System.Windows.Media.Animation;
 using WHA_Framework.DBUtilities;
 using WHA_Framework.DBUtilities.DTOs;
+using WHA_Framework.DBUtilities.SqliteDB;
 
 namespace WHA_Framework.Common.StepLibrary
 {
     public class TableChanges
     {
-        public static void updateTables(Transactions tsy)
+        public static void updateTblTransactions(Transactions tsy)
         {
             using (var db = new FrameworkDBEntities())
             {
