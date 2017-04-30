@@ -15,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoMapper;
 using WHA_Framework.Annotations;
 using WHA_Framework.Common.StepLibrary;
 using WHA_Framework.Database.SqliteDB;
@@ -104,7 +105,9 @@ namespace WHA_Framework
                 Date = DateTime.Now
             };
 
-           var tblTransaction=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
+        //   var tblTransaction1=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
+
+            var tblTransaction = Mapper.Map<tblTransaction>(transaction);
             TableChanges.updateTblTransactions(tblTransaction);
 
         }

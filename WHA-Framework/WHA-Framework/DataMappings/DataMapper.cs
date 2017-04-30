@@ -17,7 +17,8 @@ namespace WHA_Framework.DataMappings
             {
                 //config.CreateMap<tblBank, Bank>();
                 config.CreateMap<tblTransaction, Transaction>();
-              
+                config.CreateMap<Transaction, tblTransaction>();
+
             });
         }
         
