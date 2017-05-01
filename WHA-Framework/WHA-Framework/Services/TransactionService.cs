@@ -13,26 +13,26 @@ namespace WHA_Framework.Services
 {
     public class TransactionService : ITransactionService
     {
-        
+        private IDataMapper _dataMapper;
+
+        public TransactionService()
+        {
+            _dataMapper = new DataMapper();
+        }
+
         public Transaction GetTransaction(int id)
         {
-            //return new Transaction()
-            //{
-            //    TransDesc = "First Attempt", Date = DateTime.Now, TranstionTypeId = 2
-            //};
-
-            tblTransaction tblTrans;
+            
             using (var db = new FrameworkDBEntities())
             {
-                tblTrans = db.tblTransactions.FirstOrDefault(p => p.TransID == id);
+                var tblTransaction = db.tblTransactions.FirstOrDefault(p => p.TransID == id);
+                return _dataMapper.Map<tblTransaction, Transaction>(tblTransaction);
             }
 
-          //  var tblTransaction = Mapper.Map<tblTransaction>(transaction);
+            //var transaction = Mapper.Map<Transaction>(tblTrans);
 
-            var transaction = Mapper.Map<Transaction>(tblTrans);
             //Transaction transaction = _dataMapper.Map<tblTransaction, Transaction>(tblTrans);
-
-            return transaction;
+            
         }
 
         public int PostTransaction(Transaction transaction)

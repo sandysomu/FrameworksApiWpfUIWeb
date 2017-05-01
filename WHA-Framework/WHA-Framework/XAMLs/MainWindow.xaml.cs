@@ -105,7 +105,7 @@ namespace WHA_Framework
                 Date = DateTime.Now
             };
 
-        //   var tblTransaction1=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
+           var tblTransaction1=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
 
             var tblTransaction = Mapper.Map<tblTransaction>(transaction);
             TableChanges.updateTblTransactions(tblTransaction);
