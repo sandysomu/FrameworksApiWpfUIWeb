@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using NUnit.Framework.Internal;
-using WHA_Framework.Database.SqliteDB;
+﻿using System.Linq;
+using WHA.Framework.Database;
+using WHA.Framework.Database.DataModel.SqliteDB;
 using WHA_Framework.DataMappings;
 using WHA_Framework.Models;
+
 
 namespace WHA_Framework.Services
 {

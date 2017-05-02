@@ -1,7 +1,4 @@
-﻿using WHA.Framework.WebApi.Models;
-using WHA_Framework.Models;
-
-namespace WHA_Framework.Services
+﻿namespace WHA_Framework.Services
 {
     //public class TransactionService : ITransactionService
     //{

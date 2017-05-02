@@ -1,4 +1,4 @@
-﻿using WHA_Framework.Database.SqliteDB;
+﻿using WHA.Framework.Database.DataModel.SqliteDB;
 
 namespace WHA_Framework.Utilities
 {

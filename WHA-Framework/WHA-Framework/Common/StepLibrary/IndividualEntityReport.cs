@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WHA_Framework.Common.StepLibrary
+﻿namespace WHA_Framework.Common.StepLibrary
 {
     public class IndividualEntityReport
     {

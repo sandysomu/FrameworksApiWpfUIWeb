@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using WHA_Framework.DBUtilities;
-using System.Diagnostics;
-using WHA_Framework.Common.StepLibrary;
-using WHA_Framework.Database.SqliteDB;
+using WHA.Framework.Database.DataModel.SqliteDB;
 using WHA_Framework.Services;
+
 
 
 //using WHA.DBUtilities;
@@ -41,14 +36,15 @@ namespace WHA.Test
                         Amount = 703,
                         BankId = 3,
                         Date = DateTime.Now,
-                        TranstionTypeId = 2
+                        TranstionTypeId = 2,
+                        TransDesc = "Third attempt to write data"
                     };
 
                     db.tblTransactions.Add(ser);
 
                     db.Entry(ser).State = EntityState.Added;
-                    db.SaveChanges();
                 }
+                db.SaveChanges();
             }
         }
 

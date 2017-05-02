@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WHA.Framework.WebApi.Models;
-using WHA_Framework.Models;
-
-namespace WHA_Framework.Services
+﻿namespace WHA_Framework.Services
 {
     //public interface ITransactionService
     //{
