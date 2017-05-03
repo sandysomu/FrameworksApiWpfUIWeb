@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA_Framework.Database.SqliteDB
+namespace WHA.Framework.Database.DataModel
 {
     using System;
     using System.Data.Entity;
@@ -27,8 +27,8 @@ namespace WHA_Framework.Database.SqliteDB
     
         public virtual DbSet<tblAccountName> tblAccountNames { get; set; }
         public virtual DbSet<tblBank> tblBanks { get; set; }
+        public virtual DbSet<tblIndividualEntityTran> tblIndividualEntityTrans { get; set; }
         public virtual DbSet<tblTransaction> tblTransactions { get; set; }
         public virtual DbSet<tblTransactionType> tblTransactionTypes { get; set; }
-        public virtual DbSet<tblIndividualEntityTran> tblIndividualEntityTrans { get; set; }
     }
 }

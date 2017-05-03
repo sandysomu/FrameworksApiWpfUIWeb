@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA_Framework.Database.SqliteDB
+namespace WHA.Framework.Database.DataModel
 {
     using System;
     using System.Collections.Generic;

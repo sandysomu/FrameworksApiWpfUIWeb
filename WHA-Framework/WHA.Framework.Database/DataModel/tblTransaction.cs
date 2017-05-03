@@ -7,14 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA_Framework.Database.SqliteDB
+namespace WHA.Framework.Database.DataModel
 {
     using System;
     using System.Collections.Generic;
     
     public partial class tblTransaction
     {
-        public int TransID { get; set; }
+        public long TransID { get; set; }
         public Nullable<int> BankId { get; set; }
         public Nullable<int> TranstionTypeId { get; set; }
         public Nullable<int> ACnameID { get; set; }

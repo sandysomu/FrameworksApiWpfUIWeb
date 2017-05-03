@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using NUnit.Framework;
-using WHA.Framework.Database.DataModel.SqliteDB;
+using WHA.Framework.Database.DataModel;
 using WHA_Framework.Services;
 
 

@@ -69,70 +69,66 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModel\IntraBetEntities.cs" />
-    <Compile Include="DataModel\SqliteDB\tblAccountName.cs">
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\tblBank.cs">
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\tblIndividualEntityTran.cs">
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\tblTransaction.cs">
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\tblTransactionType.cs">
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\WHAdataModel.Context.cs" />
-    <Compile Include="DataModel\SqliteDB\WHAdataModel.Context1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WHAdataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\WHAdataModel.cs" />
-    <Compile Include="DataModel\SqliteDB\WHAdataModel.Designer.cs">
-      <DependentUpon>WHAdataModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\WHAdataModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WHAdataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataModel\SqliteDB\WHAdataModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>WHAdataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="DataMappings\DataMapper.cs" />
     <Compile Include="DataMappings\IDataMapper.cs" />
+    <Compile Include="DataModel\tblAccountName.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\tblBank.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\tblIndividualEntityTran.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\tblTransaction.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\tblTransactionType.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WHAFramwork.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WHAFramwork.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WHAFramwork.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\WHAFramwork.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WHAFramwork.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="DataModel\SqliteDB\WHAdataModel.edmx">
+    <EntityDeploy Include="DataModel\WHAFramwork.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WHAdataModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>WHAFramwork.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataModel\SqliteDB\WHAdataModel.edmx.diagram">
-      <DependentUpon>WHAdataModel.edmx</DependentUpon>
+    <None Include="DataModel\WHAFramwork.edmx.diagram">
+      <DependentUpon>WHAFramwork.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataModel\Linq Queries.txt" />
-    <Content Include="DataModel\SqliteDB\WHAdataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>WHAdataModel.Context1.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataModel\SqliteDB\WHAdataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>WHAdataModel1.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DataModel\WHAFramwork.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WHAFramwork.edmx</DependentUpon>
+      <LastGenOutput>WHAFramwork.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModel\WHAFramwork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WHAFramwork.edmx</DependentUpon>
+      <LastGenOutput>WHAFramwork.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.0\build\net451\System.Data.SQLite.Core.targets')" />

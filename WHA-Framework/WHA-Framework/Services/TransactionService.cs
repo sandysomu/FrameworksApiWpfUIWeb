@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using WHA.Framework.Database;
-using WHA.Framework.Database.DataModel.SqliteDB;
+using WHA.Framework.Database.DataModel;
 using WHA_Framework.DataMappings;
 using WHA_Framework.Models;
 
