@@ -14,7 +14,7 @@ namespace WHA.Framework.Database.DataModel
     
     public partial class tblTransaction
     {
-        public long TransID { get; set; }
+        public int TransID { get; set; }
         public Nullable<int> BankId { get; set; }
         public Nullable<int> TranstionTypeId { get; set; }
         public Nullable<int> ACnameID { get; set; }

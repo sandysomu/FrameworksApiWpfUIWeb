@@ -18,17 +18,11 @@ namespace WHA_Framework.Services
 
         public Transaction GetTransaction(int id)
         {
-            
             using (var db = new FrameworkDBEntities())
             {
                 var tblTransaction = db.tblTransactions.FirstOrDefault(p => p.TransID == id);
                 return _dataMapper.Map<tblTransaction, Transaction>(tblTransaction);
             }
-
-            //var transaction = Mapper.Map<Transaction>(tblTrans);
-
-            //Transaction transaction = _dataMapper.Map<tblTransaction, Transaction>(tblTrans);
-            
         }
 
         public int PostTransaction(Transaction transaction)

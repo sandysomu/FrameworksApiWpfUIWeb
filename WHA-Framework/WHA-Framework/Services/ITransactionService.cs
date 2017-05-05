@@ -8,4 +8,6 @@ namespace WHA_Framework.Services
         int PostTransaction(Transaction transaction);
         void DeleteTransaction(int id);
     }
+
+   
 }

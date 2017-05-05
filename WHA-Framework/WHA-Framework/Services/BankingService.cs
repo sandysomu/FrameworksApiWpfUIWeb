@@ -22,7 +22,7 @@ namespace WHA_Framework.Utilities
             }
         }
 
-        public tblTransactionType GetTransInfo(string TransTypeName)
+        public tblTransactionType GetTransTypeInfo(string TransTypeName)
         {
             using (var db = new FrameworkDBEntities())
             {

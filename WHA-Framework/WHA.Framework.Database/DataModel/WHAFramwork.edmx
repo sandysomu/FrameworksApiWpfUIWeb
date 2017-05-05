@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FrameworkDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Sandy\wha-framework\FrameworkDB" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FrameworkDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\Sandy\wha-framework\FrameworkDB" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblAccountName">
           <Key>
             <PropertyRef Name="ACnameID" />
@@ -104,8 +104,7 @@
             <End Role="tblTransactions" EntitySet="tblTransactions" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FrameworkDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -115,7 +114,7 @@
           </Key>
           <Property Name="ACnameID" Type="Int32" Nullable="false" />
           <Property Name="ACname" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblTransactions" Relationship="Self.FK_tblTransactions_0_0" FromRole="tblAccountName" ToRole="tblTransactions" />
+          <NavigationProperty Name="tblTransactions" Relationship="FrameworkDBModel.FK_tblTransactions_2_0" FromRole="tblAccountName" ToRole="tblTransaction" />
         </EntityType>
         <EntityType Name="tblBank">
           <Key>
@@ -123,7 +122,7 @@
           </Key>
           <Property Name="BankId" Type="Int32" Nullable="false" />
           <Property Name="BankName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblTransactions" Relationship="Self.FK_tblTransactions_2_0" FromRole="tblBanks" ToRole="tblTransactions" />
+          <NavigationProperty Name="tblTransactions" Relationship="FrameworkDBModel.FK_tblTransactions_0_0" FromRole="tblBank" ToRole="tblTransaction" />
         </EntityType>
         <EntityType Name="tblIndividualEntityTran">
           <Key>
@@ -136,84 +135,84 @@
           <Property Name="CurrentBalance" Type="Int64" />
           <Property Name="IndividualID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
-        <EntityType Name="tblTransaction">
-          <Key>
-            <PropertyRef Name="TransID" />
-          </Key>
-          <Property Name="TransID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BankId" Type="Int32" />
-          <Property Name="TranstionTypeId" Type="Int32" />
-          <Property Name="ACnameID" Type="Int32" />
-          <Property Name="Amount" Type="Double" />
-          <Property Name="Date" Type="DateTime" />
-          <Property Name="TransDesc" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblAccountName" Relationship="Self.FK_tblTransactions_0_0" FromRole="tblTransactions" ToRole="tblAccountName" />
-          <NavigationProperty Name="tblBank" Relationship="Self.FK_tblTransactions_2_0" FromRole="tblTransactions" ToRole="tblBanks" />
-          <NavigationProperty Name="tblTransactionType" Relationship="Self.FK_tblTransactions_1_0" FromRole="tblTransactions" ToRole="tblTransactionType" />
-        </EntityType>
         <EntityType Name="tblTransactionType">
           <Key>
             <PropertyRef Name="TransactionTypeId" />
           </Key>
           <Property Name="TransactionTypeId" Type="Int32" Nullable="false" />
           <Property Name="TransactionTypeName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tblTransactions" Relationship="Self.FK_tblTransactions_1_0" FromRole="tblTransactionType" ToRole="tblTransactions" />
+          <NavigationProperty Name="tblTransactions" Relationship="FrameworkDBModel.FK_tblTransactions_1_0" FromRole="tblTransactionType" ToRole="tblTransaction" />
         </EntityType>
-        <Association Name="FK_tblTransactions_0_0">
-          <End Role="tblAccountName" Type="Self.tblAccountName" Multiplicity="0..1" />
-          <End Role="tblTransactions" Type="Self.tblTransaction" Multiplicity="*" />
+        <EntityContainer Name="FrameworkDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAccountNames" EntityType="Self.tblAccountName" />
+          <EntitySet Name="tblBanks" EntityType="Self.tblBank" />
+          <EntitySet Name="tblIndividualEntityTrans" EntityType="Self.tblIndividualEntityTran" />
+          <EntitySet Name="tblTransactionTypes" EntityType="Self.tblTransactionType" />
+          <EntitySet Name="tblTransactions" EntityType="FrameworkDBModel.tblTransaction" />
+          <AssociationSet Name="FK_tblTransactions_2_0" Association="FrameworkDBModel.FK_tblTransactions_2_0">
+            <End Role="tblAccountName" EntitySet="tblAccountNames" />
+            <End Role="tblTransaction" EntitySet="tblTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTransactions_0_0" Association="FrameworkDBModel.FK_tblTransactions_0_0">
+            <End Role="tblBank" EntitySet="tblBanks" />
+            <End Role="tblTransaction" EntitySet="tblTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTransactions_1_0" Association="FrameworkDBModel.FK_tblTransactions_1_0">
+            <End Role="tblTransactionType" EntitySet="tblTransactionTypes" />
+            <End Role="tblTransaction" EntitySet="tblTransactions" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="tblTransaction">
+          <Key>
+            <PropertyRef Name="TransID" />
+          </Key>
+          <Property Name="TransID" Type="Int32" Nullable="false" />
+          <Property Name="BankId" Type="Int32" />
+          <Property Name="TranstionTypeId" Type="Int32" />
+          <Property Name="ACnameID" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="Date" Type="DateTime" />
+          <Property Name="TransDesc" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblAccountName" Relationship="FrameworkDBModel.FK_tblTransactions_2_0" FromRole="tblTransaction" ToRole="tblAccountName" />
+          <NavigationProperty Name="tblBank" Relationship="FrameworkDBModel.FK_tblTransactions_0_0" FromRole="tblTransaction" ToRole="tblBank" />
+          <NavigationProperty Name="tblTransactionType" Relationship="FrameworkDBModel.FK_tblTransactions_1_0" FromRole="tblTransaction" ToRole="tblTransactionType" />
+        </EntityType>
+        <Association Name="FK_tblTransactions_2_0">
+          <End Type="FrameworkDBModel.tblAccountName" Role="tblAccountName" Multiplicity="0..1" />
+          <End Type="FrameworkDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblAccountName">
               <PropertyRef Name="ACnameID" />
             </Principal>
-            <Dependent Role="tblTransactions">
+            <Dependent Role="tblTransaction">
               <PropertyRef Name="ACnameID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tblTransactions_2_0">
-          <End Role="tblBanks" Type="Self.tblBank" Multiplicity="0..1" />
-          <End Role="tblTransactions" Type="Self.tblTransaction" Multiplicity="*" />
+        <Association Name="FK_tblTransactions_0_0">
+          <End Type="FrameworkDBModel.tblBank" Role="tblBank" Multiplicity="0..1" />
+          <End Type="FrameworkDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblBanks">
+            <Principal Role="tblBank">
               <PropertyRef Name="BankId" />
             </Principal>
-            <Dependent Role="tblTransactions">
+            <Dependent Role="tblTransaction">
               <PropertyRef Name="BankId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_tblTransactions_1_0">
-          <End Role="tblTransactionType" Type="Self.tblTransactionType" Multiplicity="0..1" />
-          <End Role="tblTransactions" Type="Self.tblTransaction" Multiplicity="*" />
+          <End Type="FrameworkDBModel.tblTransactionType" Role="tblTransactionType" Multiplicity="0..1" />
+          <End Type="FrameworkDBModel.tblTransaction" Role="tblTransaction" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblTransactionType">
               <PropertyRef Name="TransactionTypeId" />
             </Principal>
-            <Dependent Role="tblTransactions">
+            <Dependent Role="tblTransaction">
               <PropertyRef Name="TranstionTypeId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FrameworkDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblAccountNames" EntityType="Self.tblAccountName" />
-          <EntitySet Name="tblBanks" EntityType="Self.tblBank" />
-          <EntitySet Name="tblIndividualEntityTrans" EntityType="Self.tblIndividualEntityTran" />
-          <EntitySet Name="tblTransactions" EntityType="Self.tblTransaction" />
-          <EntitySet Name="tblTransactionTypes" EntityType="Self.tblTransactionType" />
-          <AssociationSet Name="FK_tblTransactions_0_0" Association="Self.FK_tblTransactions_0_0">
-            <End Role="tblAccountName" EntitySet="tblAccountNames" />
-            <End Role="tblTransactions" EntitySet="tblTransactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblTransactions_2_0" Association="Self.FK_tblTransactions_2_0">
-            <End Role="tblBanks" EntitySet="tblBanks" />
-            <End Role="tblTransactions" EntitySet="tblTransactions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tblTransactions_1_0" Association="Self.FK_tblTransactions_1_0">
-            <End Role="tblTransactionType" EntitySet="tblTransactionTypes" />
-            <End Role="tblTransactions" EntitySet="tblTransactions" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -248,24 +247,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblTransactions">
-            <EntityTypeMapping TypeName="FrameworkDBModel.tblTransaction">
-              <MappingFragment StoreEntitySet="tblTransactions">
-                <ScalarProperty Name="TransID" ColumnName="TransID" />
-                <ScalarProperty Name="BankId" ColumnName="BankId" />
-                <ScalarProperty Name="TranstionTypeId" ColumnName="TranstionTypeId" />
-                <ScalarProperty Name="ACnameID" ColumnName="ACnameID" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="TransDesc" ColumnName="TransDesc" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblTransactionTypes">
             <EntityTypeMapping TypeName="FrameworkDBModel.tblTransactionType">
               <MappingFragment StoreEntitySet="tblTransactionType">
                 <ScalarProperty Name="TransactionTypeId" ColumnName="TransactionTypeId" />
                 <ScalarProperty Name="TransactionTypeName" ColumnName="TransactionTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTransactions">
+            <EntityTypeMapping TypeName="FrameworkDBModel.tblTransaction">
+              <MappingFragment StoreEntitySet="tblTransactions">
+                <ScalarProperty Name="TransDesc" ColumnName="TransDesc" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ACnameID" ColumnName="ACnameID" />
+                <ScalarProperty Name="TranstionTypeId" ColumnName="TranstionTypeId" />
+                <ScalarProperty Name="BankId" ColumnName="BankId" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

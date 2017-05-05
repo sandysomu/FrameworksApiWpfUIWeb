@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using AutoMapper;
 using WHA.Framework.Database;
 using WHA.Framework.Database.DataModel;
+using WHA_Framework.Common.StepLibrary;
 using WHA_Framework.DataMappings;
 using WHA_Framework.Models;
 using WHA_Framework.Utilities;
@@ -17,8 +19,8 @@ namespace WHA_Framework
     /// </summary>
     public partial class MainWindow : Window//, INotifyPropertyChanged
     {
-        private IDataMapper _dataMapper;
-        private IBankingService _bankingService;
+        private readonly IDataMapper _dataMapper;
+        private readonly IBankingService _bankingService;
 
         public MainWindow()
         {
@@ -71,30 +73,28 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-            //var transaction = new tblTransaction()
-            //{
-            //    BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
-            //    ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
-            //    TranstionTypeId = _bankingService.GetTransInfo(TransTypeComboBox.SelectedItem.ToString()).TransactionTypeId,
-            //    Amount = (Convert.ToDouble(AmountTextBox.Text)),
-            //    TransDesc = TransReasonTextBox.Text,
-            //    Date = DateTime.Now
-            //};
-
-            var transaction = new Transaction
+  
+            using (var db = new FrameworkDBEntities())
             {
-                BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
-                ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
-                TranstionTypeId = _bankingService.GetTransInfo(TransTypeComboBox.SelectedItem.ToString()).TransactionTypeId,
-                Amount = (Convert.ToDouble(AmountTextBox.Text)),
-                TransDesc = TransReasonTextBox.Text,
-                Date = DateTime.Now
-            };
 
-           var tblTransaction1=  _dataMapper.Map<Transaction, tblTransaction>(transaction);
+                var transaction = new Transaction
+                {
+                    BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
+                    ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
+                    TranstionTypeId = _bankingService.GetTransTypeInfo(TransTypeComboBox.SelectedItem.ToString())
+                        .TransactionTypeId,
+                    Amount = (Convert.ToDouble(AmountTextBox.Text)),
+                    TransDesc = TransReasonTextBox.Text,
+                    Date = DateTime.Now
 
-            var tblTransaction = Mapper.Map<tblTransaction>(transaction);
-          //  TableChanges.updateTblTransactions(tblTransaction);
+                };
+
+                var tblTransaction1 = _dataMapper.Map<Transaction, tblTransaction>(transaction);
+
+                db.tblTransactions.Add(tblTransaction1);
+                db.Entry(tblTransaction1).State = EntityState.Added;
+                db.SaveChanges();
+            }
 
         }
 

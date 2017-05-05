@@ -6,8 +6,7 @@ namespace WHA_Framework.Utilities
     {
         tblBank GetBankingInfo(string bankName);
         tblAccountName GetAcNameInfo(string acName);
-        tblTransactionType GetTransInfo(string TransTypeName);
-
-       
+        tblTransactionType GetTransTypeInfo(string TransTypeName);
+        
     }
 }

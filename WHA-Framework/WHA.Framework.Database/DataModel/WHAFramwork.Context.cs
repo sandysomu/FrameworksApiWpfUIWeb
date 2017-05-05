@@ -28,7 +28,7 @@ namespace WHA.Framework.Database.DataModel
         public virtual DbSet<tblAccountName> tblAccountNames { get; set; }
         public virtual DbSet<tblBank> tblBanks { get; set; }
         public virtual DbSet<tblIndividualEntityTran> tblIndividualEntityTrans { get; set; }
-        public virtual DbSet<tblTransaction> tblTransactions { get; set; }
         public virtual DbSet<tblTransactionType> tblTransactionTypes { get; set; }
+        public virtual DbSet<tblTransaction> tblTransactions { get; set; }
     }
 }
