@@ -1,8 +1,9 @@
 ﻿using System.Linq;
-using WHA.Framework.Database;
+using WHA.Framework.Database.Common;
+using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
-using WHA_Framework.DataMappings;
-using WHA_Framework.Models;
+using WHA.Framework.Database.Models;
+
 
 
 namespace WHA_Framework.Services
@@ -10,11 +11,15 @@ namespace WHA_Framework.Services
     public class TransactionService : ITransactionService
     {
         private IDataMapper _dataMapper;
+        private UpdateDbTables _tblUpdate;
 
         public TransactionService()
         {
             _dataMapper = new DataMapper();
+            _tblUpdate= new UpdateDbTables();
         }
+
+        
 
         public Transaction GetTransaction(int id)
         {
@@ -25,9 +30,17 @@ namespace WHA_Framework.Services
             }
         }
 
-        public int PostTransaction(Transaction transaction)
+        public  bool PostTransaction(Transaction transaction)
         {
-            throw new System.NotImplementedException();
+            _tblUpdate.UpdateTblTransaction(transaction);
+
+            return true;
+        }
+
+
+        Transaction ITransactionService.GetTransaction(int id)
+        {
+            return GetTransaction(id);
         }
 
         public void DeleteTransaction(int id)

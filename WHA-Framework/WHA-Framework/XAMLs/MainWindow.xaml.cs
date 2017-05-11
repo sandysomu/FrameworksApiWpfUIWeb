@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using AutoMapper;
-using WHA.Framework.Database;
+using WHA.Framework.Database.Common;
+using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
-using WHA_Framework.Common.StepLibrary;
-using WHA_Framework.DataMappings;
-using WHA_Framework.Models;
+using WHA.Framework.Database.Models;
 using WHA_Framework.Utilities;
 
 namespace WHA_Framework
@@ -21,14 +18,16 @@ namespace WHA_Framework
     {
         private readonly IDataMapper _dataMapper;
         private readonly IBankingService _bankingService;
+        private readonly UpdateDbTables _tblUpdate;
 
         public MainWindow()
         {
             InitializeComponent();
             _dataMapper = new DataMapper();
             _bankingService = new BankingService();
+            _tblUpdate=new UpdateDbTables();
         }
-        
+
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
         {
             List<string> data = new List<string>();
@@ -73,92 +72,27 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-  
-            using (var db = new FrameworkDBEntities())
+
+
+            var trans = new Transaction
             {
+                BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
+                ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
+                TranstionTypeId = _bankingService.GetTransTypeInfo(TransTypeComboBox.SelectedItem.ToString())
+                    .TransactionTypeId,
+                Amount = (Convert.ToDouble(AmountTextBox.Text)),
+                TransDesc = TransReasonTextBox.Text,
+                Date = DateTime.Now
 
-                var transaction = new Transaction
-                {
-                    BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
-                    ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
-                    TranstionTypeId = _bankingService.GetTransTypeInfo(TransTypeComboBox.SelectedItem.ToString())
-                        .TransactionTypeId,
-                    Amount = (Convert.ToDouble(AmountTextBox.Text)),
-                    TransDesc = TransReasonTextBox.Text,
-                    Date = DateTime.Now
+            };
+            _tblUpdate.UpdateTblTransaction(trans);
+           // UpdateDbTables(transaction);
 
-                };
-
-                var tblTransaction1 = _dataMapper.Map<Transaction, tblTransaction>(transaction);
-
-                db.tblTransactions.Add(tblTransaction1);
-                db.Entry(tblTransaction1).State = EntityState.Added;
-                db.SaveChanges();
-            }
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 
-  
-
-    //public event PropertyChangedEventHandler PropertyChanged;
-
-    //[NotifyPropertyChangedInvocator]
-    //protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    //{
-    //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    //}
-
-    //private Visibility _balancePageVisible = Visibility.Collapsed;
-    //public Visibility BalancePageVisible
-    //{
-    //    get { return _balancePageVisible; }
-    //    set
-    //    {
-    //        _balancePageVisible = value;
-    //        OnPropertyChanged();
-    //    }
-    //}
-
-    //private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
-    //{
-    //    BalancePageVisible = Visibility.Visible;
-    //}
-
-    //private void Button_Click(object sender, RoutedEventArgs e)
-    //{
-    //    BalancePageVisible = Visibility.Collapsed;
-    //}
 }
 
 

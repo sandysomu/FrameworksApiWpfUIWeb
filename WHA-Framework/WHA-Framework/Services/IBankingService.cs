@@ -4,9 +4,9 @@ namespace WHA_Framework.Utilities
 {
     public interface IBankingService
     {
-        tblBank GetBankingInfo(string bankName);
-        tblAccountName GetAcNameInfo(string acName);
-        tblTransactionType GetTransTypeInfo(string TransTypeName);
+        tblBank GetBankingInfo(int? bankId);
+        tblAccountName GetAcNameInfo(int? acNameId);
+        tblTransactionType GetTransTypeInfo(int? TransTypeId);
         
     }
 }

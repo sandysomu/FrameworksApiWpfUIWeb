@@ -12,12 +12,11 @@ namespace WHA.Framework.Database.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class tblIndividualEntityTran
+    public partial class tblEachEntityTran
     {
-        public Nullable<long> TransId { get; set; }
         public string AccountName { get; set; }
         public string TransactionType { get; set; }
-        public Nullable<long> Amount { get; set; }
+        public Nullable<double> Amount { get; set; }
         public Nullable<long> CurrentBalance { get; set; }
         public long IndividualID { get; set; }
     }

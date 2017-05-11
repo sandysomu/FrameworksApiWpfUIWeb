@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using WHA_Framework.Models;
+using WHA.Framework.Database.Models;
 using WHA_Framework.Services;
 
 namespace WHA.Framework.WebApi.Controllers
@@ -19,6 +19,15 @@ namespace WHA.Framework.WebApi.Controllers
         {
             return _transactionService.GetTransaction(id);
         }
+
+        [Route("Transactions/PostTransactionById")]
+        public IHttpActionResult PostTransaction(Transaction model)
+        {
+            var tem = model;
+            _transactionService.PostTransaction(model);
+            return Ok();
+        }
+
 
     }
 }

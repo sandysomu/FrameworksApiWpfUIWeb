@@ -1,11 +1,12 @@
 ﻿using System;
 
-namespace WHA_Framework.Models
+//namespace WHA_Framework.Models
+namespace WHA.Framework.Database.Models
 {
 
     public class Transaction
     {
-        public int TransID { get; set; } 
+        public int TransID { get; set; } = 0;
         public int? BankId { get; set; }
         public int? ACnameID { get; set; }
         public int? TranstionTypeId { get; set; }

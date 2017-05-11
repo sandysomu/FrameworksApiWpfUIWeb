@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
 using WHA.Framework.Database.DataModel;
-using WHA_Framework.Models;
+using WHA.Framework.Database.Models;
 
 
-namespace WHA_Framework.DataMappings
+
+namespace WHA.Framework.Database.DataMappings
 {
     public class DataMapper : IDataMapper
     {
