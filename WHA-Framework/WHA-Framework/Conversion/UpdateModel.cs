@@ -11,16 +11,16 @@ namespace WHA_Framework.Conversion
         {
             _bankingService = new BankingService();
         }
-        public EachEntityTran test(Transaction tran)
-        {
-            var tes = new EachEntityTran()
-            {
-             Amount   = tran.Amount,
-             AccountName = _bankingService.GetAcNameInfo(tran.ACnameID).ACname,
-             TransactionType = _bankingService.GetTransTypeInfo(tran.TranstionTypeId).TransactionTypeName,
-            };
-            return tes;
-        }
+        //public EachEntityTran test(Transaction tran)
+        //{
+        //    var tes = new EachEntityTran()
+        //    {
+        //     Amount   = tran.Amount,
+        //     AccountName = _bankingService.GetAcNameInfo(tran.ACnameID).ACname,
+        //     TransactionType = _bankingService.GetTransTypeInfo(tran.TranstionTypeId).TransactionTypeName,
+        //    };
+        //    return tes;
+        //}
         
     }
 }

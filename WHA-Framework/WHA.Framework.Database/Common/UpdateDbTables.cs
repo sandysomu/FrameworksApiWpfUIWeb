@@ -48,11 +48,11 @@ namespace WHA.Framework.Database.Common
                 using (var db = new FrameworkDBEntities())
                 {
 
-                    var trans = new EachEntityTran()
-                    {
-                       AcName = 
+                    //var trans = new EachEntityTran()
+                    //{
+                    //   AcName = 
 
-                    };
+                    //};
 
 
 

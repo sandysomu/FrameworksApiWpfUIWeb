@@ -86,13 +86,8 @@ namespace WHA_Framework
 
             };
             _tblUpdate.UpdateTblTransaction(trans);
-           // UpdateDbTables(transaction);
-
-
-        }
-
+         }
     }
-
 }
 
 
