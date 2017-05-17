@@ -3,7 +3,7 @@ using NUnit.Framework;
 using WHA.Framework.Database.Common;
 using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.Models;
+using WHA.Framework.Database.DTOs;
 
 namespace WHA.Test
 {
@@ -36,6 +36,9 @@ namespace WHA.Test
                 };
                _tblUpdate.UpdateTblTransaction(transaction);
             }
+
+
+            
         }
     }
 }

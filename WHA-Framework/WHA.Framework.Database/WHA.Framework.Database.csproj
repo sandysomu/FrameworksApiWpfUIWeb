@@ -101,8 +101,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WHAFramwork.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\EachEntityTran.cs" />
-    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="DTOs\EachEntityTran.cs" />
+    <Compile Include="DTOs\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

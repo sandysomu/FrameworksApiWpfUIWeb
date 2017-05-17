@@ -1,9 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using WHA.Framework.Database.Common;
 using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.Models;
-
+using WHA.Framework.Database.DTOs;
 
 
 namespace WHA_Framework.Services
@@ -21,7 +21,7 @@ namespace WHA_Framework.Services
 
         
 
-        public Transaction GetTransaction(int id)
+        public Transaction GetSingleTransaction(int id)
         {
             using (var db = new FrameworkDBEntities())
             {
@@ -29,6 +29,7 @@ namespace WHA_Framework.Services
                 return _dataMapper.Map<tblTransaction, Transaction>(tblTransaction);
             }
         }
+        
 
         public  bool PostTransaction(Transaction transaction)
         {
@@ -40,12 +41,22 @@ namespace WHA_Framework.Services
 
         Transaction ITransactionService.GetTransaction(int id)
         {
-            return GetTransaction(id);
+            return GetSingleTransaction(id);
         }
 
         public void DeleteTransaction(int id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<Transaction> GetAllTransaction(int bankId)
+        {
+            var transactionList = new List<Transaction>();
+            using (var db = new FrameworkDBEntities())
+            {
+                var tblTransactions = (from v in db.tblTransactions where v.BankId > bankId select v).ToList();
+                return _dataMapper.Map<List<tblTransaction>, List<Transaction>>(tblTransactions);
+            }
         }
     }
 }

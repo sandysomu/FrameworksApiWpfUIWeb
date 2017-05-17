@@ -1,5 +1,8 @@
-﻿using WHA.Framework.Database.Models;
-
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using WHA.Framework.Database.DataModel;
+using WHA.Framework.Database.DTOs;
 
 namespace WHA_Framework.Services
 {
@@ -9,6 +12,8 @@ namespace WHA_Framework.Services
         Transaction GetTransaction(int id);
         bool PostTransaction(Transaction transaction);
         void DeleteTransaction(int id);
+        IEnumerable<Transaction> GetAllTransaction(int bankId);
+       // IEnumerable GetAllTransaction(int v, object bankId);
     }
 
    

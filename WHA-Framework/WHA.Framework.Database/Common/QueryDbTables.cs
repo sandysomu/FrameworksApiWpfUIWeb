@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.Models;
 
 namespace WHA.Framework.Database.Common
 {

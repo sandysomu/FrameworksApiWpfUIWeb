@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.Models;
-
+using WHA.Framework.Database.DTOs;
 
 
 namespace WHA.Framework.Database.DataMappings

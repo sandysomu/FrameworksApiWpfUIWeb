@@ -1,4 +1,4 @@
-﻿namespace  WHA.Framework.Database.Models
+﻿namespace  WHA.Framework.Database.DTOs
 
 {
     public class EachEntityTran

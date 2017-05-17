@@ -1,5 +1,5 @@
 ﻿using System.Web.Http;
-using WHA.Framework.Database.Models;
+using WHA.Framework.Database.DTOs;
 using WHA_Framework.Services;
 
 namespace WHA.Framework.WebApi.Controllers

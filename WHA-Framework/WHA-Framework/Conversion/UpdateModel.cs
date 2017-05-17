@@ -1,5 +1,4 @@
-﻿using WHA.Framework.Database.Models;
-using WHA_Framework.Utilities;
+﻿using WHA_Framework.Utilities;
 
 namespace WHA_Framework.Conversion
 {
