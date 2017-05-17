@@ -39,9 +39,28 @@ namespace WHA_Framework.Utilities
             throw new System.NotImplementedException();
         }
 
+        public tblBank GetBankingInfo(int bankNameId)
+        {
+            using (var db = new FrameworkDBEntities())
+            {
+                return db.tblBanks.FirstOrDefault(b => b.BankId == bankNameId);
+            }
+        }
 
+        public tblAccountName GetAcNameInfo(int acNameId)
+        {
+            using (var db = new FrameworkDBEntities())
+            {
+                return db.tblAccountNames.FirstOrDefault(b => b.ACnameID == acNameId);
+            }
+        }
 
-
-
+        public tblTransactionType GetTransTypeInfo(int transTypeNameId)
+        {
+            using (var db = new FrameworkDBEntities())
+            {
+                return db.tblTransactionTypes.FirstOrDefault(b => b.TransactionTypeId == transTypeNameId);
+            }
+        }
     }
 }

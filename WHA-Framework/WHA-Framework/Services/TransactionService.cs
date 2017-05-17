@@ -34,7 +34,6 @@ namespace WHA_Framework.Services
         public  bool PostTransaction(Transaction transaction)
         {
             _tblUpdate.UpdateTblTransaction(transaction);
-
             return true;
         }
 

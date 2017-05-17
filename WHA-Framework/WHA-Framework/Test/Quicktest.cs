@@ -21,7 +21,7 @@ namespace WHA.Test
         [Test]
         public void Test()
         {
-            var cb = new tblAccountName() { ACnameID = 3, ACname = "Vihaan" };
+         //   var cb = new tblAccountName() { ACnameID = 3, ACname = "Vihaan" };
             for (int i = 1; i <= 1; i++)
             {
 
@@ -36,6 +36,7 @@ namespace WHA.Test
                 };
                _tblUpdate.UpdateTblTransaction(transaction);
             }
+
 
 
             

@@ -12,6 +12,7 @@
         <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_2_0" />
         <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_0_0" />
         <AssociationConnector Association="FrameworkDBModel.FK_tblTransactions_1_0" />
+        <EntityTypeShape EntityType="FrameworkDBModel.tblEachEntityTran" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

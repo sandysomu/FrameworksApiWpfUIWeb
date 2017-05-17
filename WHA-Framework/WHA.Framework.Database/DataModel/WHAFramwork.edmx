@@ -19,6 +19,20 @@
           <Property Name="BankId" Type="int" Nullable="false" />
           <Property Name="BankName" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
+        <EntityType Name="tblEachEntityTran">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="integer" Nullable="false" />
+          <Property Name="TransID" Type="integer" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="TransDesc" Type="integer" />
+          <Property Name="Amount" Type="integer" />
+          <Property Name="Date" Type="integer" />
+          <Property Name="CurrentBalance" Type="integer" />
+        </EntityType>
         <EntityType Name="tblTransactions">
           <Key>
             <PropertyRef Name="TransID" />
@@ -77,6 +91,7 @@
         <EntityContainer Name="FrameworkDBModelStoreContainer">
           <EntitySet Name="tblAccountName" EntityType="Self.tblAccountName" store:Type="Tables" />
           <EntitySet Name="tblBanks" EntityType="Self.tblBanks" store:Type="Tables" />
+          <EntitySet Name="tblEachEntityTran" EntityType="Self.tblEachEntityTran" store:Type="Tables" />
           <EntitySet Name="tblTransactions" EntityType="Self.tblTransactions" store:Type="Tables" />
           <EntitySet Name="tblTransactionType" EntityType="Self.tblTransactionType" store:Type="Tables" />
           <AssociationSet Name="FK_tblTransactions_0_0" Association="Self.FK_tblTransactions_0_0">
@@ -137,6 +152,7 @@
             <End Role="tblTransactionType" EntitySet="tblTransactionTypes" />
             <End Role="tblTransaction" EntitySet="tblTransactions" />
           </AssociationSet>
+          <EntitySet Name="tblEachEntityTrans" EntityType="FrameworkDBModel.tblEachEntityTran" />
           </EntityContainer>
         <EntityType Name="tblTransaction">
           <Key>
@@ -189,6 +205,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tblEachEntityTran">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Int64" Nullable="false" />
+          <Property Name="TransID" Type="Int64" Nullable="false" />
+          <Property Name="TransactionType" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="AccountName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="TransDesc" Type="Int64" />
+          <Property Name="Amount" Type="Int64" />
+          <Property Name="Date" Type="Int64" />
+          <Property Name="CurrentBalance" Type="Int64" />
+          <Property Name="BankName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -229,6 +259,21 @@
                 <ScalarProperty Name="TranstionTypeId" ColumnName="TranstionTypeId" />
                 <ScalarProperty Name="BankId" ColumnName="BankId" />
                 <ScalarProperty Name="TransID" ColumnName="TransID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblEachEntityTrans">
+            <EntityTypeMapping TypeName="FrameworkDBModel.tblEachEntityTran">
+              <MappingFragment StoreEntitySet="tblEachEntityTran">
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="CurrentBalance" ColumnName="CurrentBalance" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TransDesc" ColumnName="TransDesc" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransID" ColumnName="TransID" />
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

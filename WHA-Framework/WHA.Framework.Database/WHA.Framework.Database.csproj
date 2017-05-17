@@ -80,6 +80,9 @@
     <Compile Include="DataModel\tblBank.cs">
       <DependentUpon>WHAFramwork.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\tblEachEntityTran.cs">
+      <DependentUpon>WHAFramwork.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\tblTransaction.cs">
       <DependentUpon>WHAFramwork.tt</DependentUpon>
     </Compile>

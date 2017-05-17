@@ -16,6 +16,8 @@ namespace WHA.Framework.Database.DataMappings
             {
                 config.CreateMap<tblTransaction, Transaction>();
                 config.CreateMap<Transaction, tblTransaction>();
+                config.CreateMap<EachEntityTran, tblEachEntityTran>();
+
             });
             _mapper = Mapper.Instance;
 

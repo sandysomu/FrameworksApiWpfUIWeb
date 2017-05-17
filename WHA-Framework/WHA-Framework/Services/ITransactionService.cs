@@ -13,7 +13,6 @@ namespace WHA_Framework.Services
         bool PostTransaction(Transaction transaction);
         void DeleteTransaction(int id);
         IEnumerable<Transaction> GetAllTransaction(int bankId);
-       // IEnumerable GetAllTransaction(int v, object bankId);
     }
 
    

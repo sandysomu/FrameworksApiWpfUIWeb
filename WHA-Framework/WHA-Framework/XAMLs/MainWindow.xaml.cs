@@ -7,6 +7,7 @@ using WHA.Framework.Database.Common;
 using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
 using WHA.Framework.Database.DTOs;
+using WHA_Framework.Conversion;
 using WHA_Framework.Services;
 using WHA_Framework.Utilities;
 
@@ -21,6 +22,7 @@ namespace WHA_Framework
         private readonly IBankingService _bankingService;
         private readonly UpdateDbTables _tblUpdate;
         private ITransactionService _transactionService;
+        private UpdateModel _updateModel;
 
         public MainWindow()
         {
@@ -29,6 +31,7 @@ namespace WHA_Framework
             _bankingService = new BankingService();
             _tblUpdate=new UpdateDbTables();
             _transactionService = new TransactionService();
+            _updateModel = new UpdateModel();
         }
 
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
@@ -88,7 +91,9 @@ namespace WHA_Framework
                 Date = DateTime.Now
 
             };
+            _tblUpdate.UpdateTblEntity(_updateModel.test(trans));
             _tblUpdate.UpdateTblTransaction(trans);
+            
          }
 
         private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
