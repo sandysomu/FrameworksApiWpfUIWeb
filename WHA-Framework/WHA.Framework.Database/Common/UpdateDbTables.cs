@@ -23,7 +23,6 @@ namespace WHA.Framework.Database.Common
 
         public bool UpdateTblTransaction(Transaction transaction)
         {
-            //   UpdateTblEachEnity(ConvertToEachEntityTran(transaction));
             try
             {
                 using (var db = new FrameworkDBEntities())
@@ -44,43 +43,22 @@ namespace WHA.Framework.Database.Common
             }
         }
 
-
-
-        public bool UpdateTblEntity(EachEntityTran transaction)
+        
+        public bool UpdateTblEntity(EachEntityTran entityTran)
         {
-            //   UpdateTblEachEnity(ConvertToEachEntityTran(transaction));
-            try
-            {
-                using (var db = new FrameworkDBEntities())
-                {
 
-                    var tblTransaction1 = _dataMapper.Map<EachEntityTran, tblEachEntityTran>(transaction);
-                    db.tblEachEntityTrans.Add(tblTransaction1);
-                    db.Entry(tblTransaction1).State = EntityState.Added;
-                    db.SaveChanges();
-                    db.Dispose();
-                    return true;
-                }
-            }
-            catch (Exception e)
+            using (var db = new FrameworkDBEntities())
             {
-                Console.WriteLine(e);
-                return false;
+
+                var entityTran1 = _dataMapper.Map<EachEntityTran, tblEachEntityTran>(entityTran);
+                db.tblEachEntityTrans.Add(entityTran1);
+                db.Entry(entityTran1).State = EntityState.Added;
+                db.SaveChanges();
+                db.Dispose();
+                return true;
             }
         }
 
-
-
-
-
-
-
-
-
     }
-
-
-
-    
 
 }

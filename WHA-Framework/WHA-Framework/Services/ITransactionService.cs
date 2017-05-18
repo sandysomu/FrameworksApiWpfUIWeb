@@ -12,7 +12,8 @@ namespace WHA_Framework.Services
         Transaction GetTransaction(int id);
         bool PostTransaction(Transaction transaction);
         void DeleteTransaction(int id);
-        IEnumerable<Transaction> GetAllTransaction(int bankId);
+        IEnumerable<EachEntityTran> GetTransactionforEachEntity(string bankName);
+        IEnumerable<EachEntityTran> GetAllTransaction();
     }
 
    

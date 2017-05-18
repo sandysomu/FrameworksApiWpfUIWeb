@@ -24,11 +24,10 @@ namespace WHA_Framework.Conversion
                 TransactionType = _bankingService.GetTransTypeInfo((int)tran.TranstionTypeId).TransactionTypeName,
                 BankName = _bankingService.GetBankingInfo((int)tran.BankId).BankName,
                 TransDesc = tran.TransDesc,
-                Amount = tran.Amount,
+                Amount = (long)tran.Amount,
                 CurrentBalance = 0,
                 Date = tran.Date,
                 TransID = tran.TransID
-                //TransactionType = _bankingService.GetTransTypeInfo(tran.TranstionTypeId).TransactionTypeName,
             };
             return tes;
         }

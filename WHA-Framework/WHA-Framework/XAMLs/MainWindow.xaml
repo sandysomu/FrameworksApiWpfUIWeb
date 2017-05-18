@@ -48,12 +48,13 @@
             <TextBlock x:Name="AmountText" HorizontalAlignment="Left" Margin="173,304,0,0" TextWrapping="Wrap" Text="Enter Amount" VerticalAlignment="Top"/>
             <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Height="19" Margin="173,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
             <Button x:Name="CommonWealthButton" Content="CWA"  HorizontalAlignment="Left" Margin="14,55,0,0" VerticalAlignment="Top" Width="93" Click="CommonWealthButton_Click" />
-            <Button x:Name="CitiButton" Content="CB"  HorizontalAlignment="Left" Margin="329,57,0,0" VerticalAlignment="Top" Width="104"/>
-            <Button x:Name="SelectButton" Content="Select Union"  HorizontalAlignment="Left" Margin="499,57,0,0" VerticalAlignment="Top" Width="99"/>
-            <Button x:Name="HSBCButton" Content="H CC"  HorizontalAlignment="Left" Margin="149,56,0,0" VerticalAlignment="Top" Width="126"/>
+            <Button x:Name="CitiButton" Content="CB"  HorizontalAlignment="Left" Margin="265,56,0,0" VerticalAlignment="Top" Width="104" Click="CitiButton_Click"/>
+            <Button x:Name="SelectButton" Content="Select Union"  HorizontalAlignment="Left" Margin="389,56,0,0" VerticalAlignment="Top" Width="99" Click="SelectButton_Click" />
+            <Button x:Name="HSBCButton" Content="HSBC"  HorizontalAlignment="Left" Margin="120,56,0,0" VerticalAlignment="Top" Width="126" Click="HSBCButton_Click"/>
             <TextBlock x:Name="PageHeadingText" FontSize="20" FontStyle="Oblique" Background="Beige"  HorizontalAlignment="Center" Margin="163,13,249,0" 
                    Text="William Hill Australia" VerticalAlignment="Top" Width="205"/>
             <DataGrid x:Name="EntityDetails" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="27,109,0,0" VerticalAlignment="Top" Height="173" Width="523"/>
+            <Button x:Name="AllBankButton" Content="All"  HorizontalAlignment="Left" Margin="499,56,0,0" VerticalAlignment="Top" Width="51" Click="AllBankButton_Click" />
 
 
         </Grid>

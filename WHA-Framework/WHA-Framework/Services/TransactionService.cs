@@ -48,14 +48,27 @@ namespace WHA_Framework.Services
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Transaction> GetAllTransaction(int bankId)
+        public IEnumerable<EachEntityTran> GetTransactionforEachEntity(string bankName)
         {
-            var transactionList = new List<Transaction>();
+            GetAllTransaction();
+            var transactionList = new List<EachEntityTran>();
             using (var db = new FrameworkDBEntities())
             {
-                var tblTransactions = (from v in db.tblTransactions where v.BankId > bankId select v).ToList();
-                return _dataMapper.Map<List<tblTransaction>, List<Transaction>>(tblTransactions);
+                var tblTransactions = (from v in db.tblEachEntityTrans where v.BankName.Trim() == bankName select v).ToList();
+                return _dataMapper.Map<List<tblEachEntityTran>, List<EachEntityTran>>(tblTransactions);
             }
         }
+
+        public IEnumerable<EachEntityTran> GetAllTransaction()
+        {
+            var transactionList = new List<EachEntityTran>();
+            using (var db = new FrameworkDBEntities())
+            {
+                var tblTransactions = (from v in db.tblEachEntityTrans select v).ToList();
+                return _dataMapper.Map<List<tblEachEntityTran>, List<EachEntityTran>>(tblTransactions);
+            }
+        }
+
+
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using NUnit.Framework;
 using WHA.Framework.Database.Common;
 using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
@@ -29,7 +30,7 @@ namespace WHA_Framework
             InitializeComponent();
             _dataMapper = new DataMapper();
             _bankingService = new BankingService();
-            _tblUpdate=new UpdateDbTables();
+            _tblUpdate = new UpdateDbTables();
             _transactionService = new TransactionService();
             _updateModel = new UpdateModel();
         }
@@ -78,8 +79,6 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-
-
             var trans = new Transaction
             {
                 BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
@@ -89,17 +88,35 @@ namespace WHA_Framework
                 Amount = (Convert.ToDouble(AmountTextBox.Text)),
                 TransDesc = TransReasonTextBox.Text,
                 Date = DateTime.Now
-
             };
             _tblUpdate.UpdateTblEntity(_updateModel.test(trans));
             _tblUpdate.UpdateTblTransaction(trans);
-            
-         }
+
+        }
 
         private void CommonWealthButton_Click(object sender, RoutedEventArgs e)
         {
+            EntityDetails.ItemsSource = _transactionService.GetTransactionforEachEntity("Commonwealth");
+        }
 
-            EntityDetails.ItemsSource = _transactionService.GetAllTransaction(3);
+        private void HSBCButton_Click(object sender, RoutedEventArgs e)
+        {
+            EntityDetails.ItemsSource = _transactionService.GetTransactionforEachEntity("HSBC");
+        }
+
+        private void CitiButton_Click(object sender, RoutedEventArgs e)
+        {
+            EntityDetails.ItemsSource = _transactionService.GetTransactionforEachEntity("City Bank");
+        }
+
+        private void SelectButton_Click(object sender, RoutedEventArgs e)
+        {
+            EntityDetails.ItemsSource = _transactionService.GetTransactionforEachEntity("Select Union");
+        }
+
+        private void AllBankButton_Click(object sender, RoutedEventArgs e)
+        {
+            EntityDetails.ItemsSource = _transactionService.GetAllTransaction();
         }
     }
 }

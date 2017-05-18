@@ -14,14 +14,13 @@ namespace WHA.Framework.Database.DataModel
     
     public partial class tblEachEntityTran
     {
-        public long AutoID { get; set; }
         public long TransID { get; set; }
         public string TransactionType { get; set; }
         public string AccountName { get; set; }
-        public Nullable<long> TransDesc { get; set; }
-        public Nullable<long> Amount { get; set; }
-        public Nullable<long> Date { get; set; }
-        public Nullable<long> CurrentBalance { get; set; }
         public string BankName { get; set; }
+        public string TransDesc { get; set; }
+        public Nullable<long> Amount { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<long> CurrentBalance { get; set; }
     }
 }
