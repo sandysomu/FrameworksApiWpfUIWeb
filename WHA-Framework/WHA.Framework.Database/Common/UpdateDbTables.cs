@@ -10,7 +10,7 @@ using WHA.Framework.Database.DTOs;
 
 namespace WHA.Framework.Database.Common
 {
-    public class UpdateDbTables
+    public class UpdateDbTables : IUpdateDbTables
     {
         private readonly IDataMapper _dataMapper;
 

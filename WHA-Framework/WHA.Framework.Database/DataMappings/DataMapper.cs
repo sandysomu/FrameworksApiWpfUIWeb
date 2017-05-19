@@ -19,6 +19,12 @@ namespace WHA.Framework.Database.DataMappings
                 config.CreateMap<EachEntityTran, tblEachEntityTran>();
                 config.CreateMap<tblEachEntityTran, EachEntityTran >();
 
+                //config.CreateMap<Transaction, EachEntityTran>()
+                //   .ForMember(o => o.AccountName, m => m.MapFrom(s => s.))
+                //   .ForMember(o => o.CompetitorID, m => m.MapFrom(s => s.CompetitorId))
+                //   .ForMember(o => o.CompetitorName, m => m.MapFrom(s => s.Name))
+                //   .ForAllOtherMembers(expression => expression.Ignore());
+
             });
             _mapper = Mapper.Instance;
 

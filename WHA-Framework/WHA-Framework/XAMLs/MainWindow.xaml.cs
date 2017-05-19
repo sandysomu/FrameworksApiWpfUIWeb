@@ -1,38 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
+using Autofac;
 using NUnit.Framework;
 using WHA.Framework.Database.Common;
 using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
 using WHA_Framework.Conversion;
+using WHA_Framework.IoC;
 using WHA_Framework.Services;
 using WHA_Framework.Utilities;
+using Transaction = WHA.Framework.Database.DTOs.Transaction;
 
 namespace WHA_Framework
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window//, INotifyPropertyChanged
+    public partial class MainWindow : Window
     {
         private readonly IDataMapper _dataMapper;
         private readonly IBankingService _bankingService;
-        private readonly UpdateDbTables _tblUpdate;
-        private ITransactionService _transactionService;
-        private UpdateModel _updateModel;
+        private readonly IUpdateDbTables _tblUpdate;
+        private readonly ITransactionService _transactionService;
+        private readonly UpdateModel _updateModel;
 
         public MainWindow()
         {
             InitializeComponent();
-            _dataMapper = new DataMapper();
-            _bankingService = new BankingService();
-            _tblUpdate = new UpdateDbTables();
-            _transactionService = new TransactionService();
-            _updateModel = new UpdateModel();
+            _dataMapper = IocConfiguration.Initialize().Resolve<IDataMapper>();
+            _bankingService = IocConfiguration.Initialize().Resolve<IBankingService>(); 
+            _tblUpdate = IocConfiguration.Initialize().Resolve<IUpdateDbTables>(); 
+            _transactionService = IocConfiguration.Initialize().Resolve<ITransactionService>(); 
+            _updateModel = IocConfiguration.Initialize().Resolve<UpdateModel>();
         }
 
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)

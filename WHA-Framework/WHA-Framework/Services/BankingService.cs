@@ -1,11 +1,15 @@
 ﻿using System.Linq;
+using System.Transactions;
 using WHA.Framework.Database.DataModel;
+using WHA_Framework.Conversion;
+using WHA_Framework.Services;
 
 
 namespace WHA_Framework.Utilities
 {
     public class BankingService : IBankingService
     {
+        
         
         public tblBank GetBankingInfo(string bankName)
         {
@@ -61,6 +65,11 @@ namespace WHA_Framework.Utilities
             {
                 return db.tblTransactionTypes.FirstOrDefault(b => b.TransactionTypeId == transTypeNameId);
             }
+        }
+
+        public void GetMeMoreData()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

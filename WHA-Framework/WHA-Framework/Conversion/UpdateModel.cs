@@ -5,14 +5,14 @@ using System.Linq;
 
 namespace WHA_Framework.Conversion
 {
-    public class UpdateModel
+    public class UpdateModel 
     {
-        private IBankingService _bankingService;
+        private readonly IBankingService _bankingService;
 
 
         public UpdateModel()
         {
-            _bankingService = new BankingService();
+       //     _bankingService = new BankingService();
         }
 
 
@@ -31,13 +31,6 @@ namespace WHA_Framework.Conversion
             };
             return tes;
         }
-
-
-
-
-
-
-
 
     }
 }

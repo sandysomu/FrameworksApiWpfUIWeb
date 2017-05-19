@@ -21,7 +21,7 @@ namespace WHA.Test
         [Test]
         public void Test()
         {
-         //   var cb = new tblAccountName() { ACnameID = 3, ACname = "Vihaan" };
+            //   var cb = new tblAccountName() { ACnameID = 3, ACname = "Vihaan" };
             for (int i = 1; i <= 1; i++)
             {
 
@@ -34,12 +34,19 @@ namespace WHA.Test
                     TranstionTypeId = 2,
                     TransDesc = "forth 89 attempt to write data"
                 };
-               _tblUpdate.UpdateTblTransaction(transaction);
+                _tblUpdate.UpdateTblTransaction(transaction);
             }
-
-
-
-            
         }
+
+
+        [Test]
+        public void Test1()
+        {
+            // Open the window
+           
+           
+        }
+
+
     }
 }

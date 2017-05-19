@@ -12,5 +12,8 @@ namespace WHA_Framework.Utilities
         tblAccountName GetAcNameInfo(int acNameId);
         tblTransactionType GetTransTypeInfo(int transTypeNameId);
 
+        void GetMeMoreData();
+
+
     }
 }
