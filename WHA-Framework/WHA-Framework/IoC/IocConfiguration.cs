@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autofac;
 using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataMappings;
+using WHA_Framework.DataMappings;
 using WHA_Framework.Services;
 using WHA_Framework.Utilities;
 

@@ -1,4 +1,4 @@
-﻿namespace WHA.Framework.Database.DataMappings
+﻿namespace WHA_Framework.DataMappings
 {
     public interface IDataMapper
     {

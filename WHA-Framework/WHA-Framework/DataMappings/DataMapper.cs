@@ -2,8 +2,7 @@
 using WHA.Framework.Database.DataModel;
 using WHA.Framework.Database.DTOs;
 
-
-namespace WHA.Framework.Database.DataMappings
+namespace WHA_Framework.DataMappings
 {
     public class DataMapper : IDataMapper
     {

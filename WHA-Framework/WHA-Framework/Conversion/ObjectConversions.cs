@@ -5,18 +5,18 @@ using System.Linq;
 
 namespace WHA_Framework.Conversion
 {
-    public class UpdateModel 
+    public class ObjectConversions 
     {
         private readonly IBankingService _bankingService;
 
 
-        public UpdateModel()
+        public ObjectConversions()
         {
-       //     _bankingService = new BankingService();
+            _bankingService = new BankingService();
         }
 
 
-        public EachEntityTran test(Transaction tran)
+        public EachEntityTran ConvertTransactionToEachEntityTran(Transaction tran)
         {
             var tes = new EachEntityTran()
             {

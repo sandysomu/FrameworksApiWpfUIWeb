@@ -7,8 +7,8 @@ using System.Windows.Controls;
 using Autofac;
 using NUnit.Framework;
 using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
+using WHA.Framework.Database.DTOs;
 using WHA_Framework.Conversion;
 using WHA_Framework.IoC;
 using WHA_Framework.Services;
@@ -17,25 +17,26 @@ using Transaction = WHA.Framework.Database.DTOs.Transaction;
 
 namespace WHA_Framework
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        private readonly IDataMapper _dataMapper;
+
         private readonly IBankingService _bankingService;
         private readonly IUpdateDbTables _tblUpdate;
         private readonly ITransactionService _transactionService;
-        private readonly UpdateModel _updateModel;
+        private readonly ObjectConversions _objectConversions;
+        private readonly InitiateDataUpdate _initiateDataUpdate;
+
+
 
         public MainWindow()
         {
             InitializeComponent();
-            _dataMapper = IocConfiguration.Initialize().Resolve<IDataMapper>();
-            _bankingService = IocConfiguration.Initialize().Resolve<IBankingService>(); 
-            _tblUpdate = IocConfiguration.Initialize().Resolve<IUpdateDbTables>(); 
-            _transactionService = IocConfiguration.Initialize().Resolve<ITransactionService>(); 
-            _updateModel = IocConfiguration.Initialize().Resolve<UpdateModel>();
+            _bankingService = IocConfiguration.Initialize().Resolve<IBankingService>();
+            _tblUpdate = IocConfiguration.Initialize().Resolve<IUpdateDbTables>();
+            _transactionService = IocConfiguration.Initialize().Resolve<ITransactionService>();
+            _objectConversions = IocConfiguration.Initialize().Resolve<ObjectConversions>();
+            _initiateDataUpdate = IocConfiguration.Initialize().Resolve<InitiateDataUpdate>();
         }
 
         public void FinanceListComboBox_Loaded(object sender, RoutedEventArgs e)
@@ -82,7 +83,7 @@ namespace WHA_Framework
 
         public void TransButton_Click(object sender, RoutedEventArgs e)
         {
-            var trans = new Transaction
+            var transaction = new Transaction
             {
                 BankId = _bankingService.GetBankingInfo(FinanceListComboBox.SelectedItem.ToString()).BankId,
                 ACnameID = _bankingService.GetAcNameInfo(AccountNameCombo.SelectedItem.ToString()).ACnameID,
@@ -92,9 +93,9 @@ namespace WHA_Framework
                 TransDesc = TransReasonTextBox.Text,
                 Date = DateTime.Now
             };
-            _tblUpdate.UpdateTblEntity(_updateModel.test(trans));
-            _tblUpdate.UpdateTblTransaction(trans);
 
+            _initiateDataUpdate.UpdateTblTransaction(transaction);
+            _initiateDataUpdate.UpdateTblEntity(_objectConversions.ConvertTransactionToEachEntityTran(transaction));
         }
 
         private void CommonWealthButton_Click(object sender, RoutedEventArgs e)

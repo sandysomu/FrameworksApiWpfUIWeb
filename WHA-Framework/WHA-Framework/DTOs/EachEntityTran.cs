@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace  WHA.Framework.Database.DTOs
+namespace  WHA_Framework.DTOs
 
 {
     public class EachEntityTran
@@ -15,6 +14,7 @@ namespace  WHA.Framework.Database.DTOs
         public long? Amount { get; set; }
         public DateTime? Date { get; set; }
         public long? CurrentBalance { get; set; }
+
     }
 
 

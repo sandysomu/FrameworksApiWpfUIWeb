@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
 using WHA.Framework.Database.DTOs;
+using WHA_Framework.Conversion;
+using WHA_Framework.DataMappings;
 
 
 namespace WHA_Framework.Services
@@ -11,12 +12,12 @@ namespace WHA_Framework.Services
     public class TransactionService : ITransactionService
     {
         private IDataMapper _dataMapper;
-        private UpdateDbTables _tblUpdate;
+        private InitiateDataUpdate _dataUpdate;
 
         public TransactionService()
         {
             _dataMapper = new DataMapper();
-            _tblUpdate= new UpdateDbTables();
+            _dataUpdate= new InitiateDataUpdate();
         }
 
         
@@ -33,7 +34,7 @@ namespace WHA_Framework.Services
 
         public  bool PostTransaction(Transaction transaction)
         {
-            _tblUpdate.UpdateTblTransaction(transaction);
+            _dataUpdate.UpdateTblTransaction(transaction);
             return true;
         }
 

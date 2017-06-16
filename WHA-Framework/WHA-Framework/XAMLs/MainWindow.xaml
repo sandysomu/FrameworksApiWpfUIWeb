@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:WHA_Framework"
         mc:Ignorable="d"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
-        Title="MainWindow" Height="450" Width="625">
+        Title="FirstWindow" Height="450" Width="625">
     <Grid >
         <Grid Margin="1,0,-1,0">
             <TextBlock x:Name="FinanceListText" HorizontalAlignment="Left" Margin="14,360,0,0" TextWrapping="Wrap" Text="Financial Entity" VerticalAlignment="Top"/>
-            <ComboBox x:Name="FinanceListComboBox" Loaded="FinanceListComboBox_Loaded"  HorizontalAlignment="Left" Margin="11,386,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+            <ComboBox  x:Name="FinanceListComboBox" AutomationProperties.AutomationId="FinancialEntityList" Loaded="FinanceListComboBox_Loaded"  HorizontalAlignment="Left" Margin="11,386,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -20,8 +20,8 @@
                     </TransformGroup>
                 </ComboBox.RenderTransform>
             </ComboBox>
-            <TextBlock x:Name="TransType" HorizontalAlignment="Left" Margin="173,360,0,0" TextWrapping="Wrap" Text="Transaction Type" VerticalAlignment="Top"/>
-            <ComboBox x:Name="TransTypeComboBox" Loaded="TransTypeComboBox_Loaded" HorizontalAlignment="Left" Margin="173,387,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Height="22">
+            <TextBlock x:Name="TransType" HorizontalAlignment="Left" Margin="173,360,0,0" TextWrapping="Wrap" Text="Transaction Type" VerticalAlignment="Top"></TextBlock>
+            <ComboBox x:Name="TransTypeComboBox" AutomationProperties.AutomationId="TransTypeList" Loaded="TransTypeComboBox_Loaded" HorizontalAlignment="Left" Margin="173,387,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Height="22">
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -31,11 +31,11 @@
                     </TransformGroup>
                 </ComboBox.RenderTransform>
             </ComboBox>
-            <TextBlock x:Name="TransReason" HorizontalAlignment="Left" Margin="317,360,0,0" TextWrapping="Wrap" Text="Enter Trasaction Reason" VerticalAlignment="Top"/>
+            <TextBlock x:Name="TransReason"  HorizontalAlignment="Left"  Margin="317,360,0,0" TextWrapping="Wrap" Text="Enter Trasaction Reason" VerticalAlignment="Top"/>
             <TextBox x:Name="TransReasonTextBox" HorizontalAlignment="Left" Height="19" Margin="317,388,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" />
             <Button x:Name="SubmitButton" Content="Submit" Click="TransButton_Click" HorizontalAlignment="Left" Margin="499,385,0,0" VerticalAlignment="Top" Width="75"/>
             <TextBlock x:Name="AccountNameText" HorizontalAlignment="Left" Margin="14,301,0,0" TextWrapping="Wrap" Text="AccountName" VerticalAlignment="Top"/>
-            <ComboBox x:Name="AccountNameCombo" Loaded="AccountNameCombo_OnLoaded" HorizontalAlignment="Left" Margin="13,326,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+            <ComboBox x:Name="AccountNameCombo" AutomationProperties.AutomationId="AccountNameList" Loaded="AccountNameCombo_OnLoaded" HorizontalAlignment="Left" Margin="13,326,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
                 <ComboBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -55,8 +55,6 @@
                    Text="William Hill Australia" VerticalAlignment="Top" Width="205"/>
             <DataGrid x:Name="EntityDetails" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="27,109,0,0" VerticalAlignment="Top" Height="173" Width="523"/>
             <Button x:Name="AllBankButton" Content="All"  HorizontalAlignment="Left" Margin="499,56,0,0" VerticalAlignment="Top" Width="51" Click="AllBankButton_Click" />
-
-
         </Grid>
 
         <!--<Grid Background="Aqua" Visibility="{Binding BalancePageVisible}">

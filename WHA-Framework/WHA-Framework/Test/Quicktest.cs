@@ -1,9 +1,10 @@
 ﻿using System;
 using NUnit.Framework;
 using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataMappings;
 using WHA.Framework.Database.DataModel;
 using WHA.Framework.Database.DTOs;
+using WHA_Framework.Conversion;
+using WHA_Framework.DataMappings;
 
 namespace WHA.Test
 {
@@ -11,11 +12,12 @@ namespace WHA.Test
     class Quicktest
     {
         private readonly IDataMapper _dataMapper = new DataMapper();
-        readonly UpdateDbTables _tblUpdate;
+        readonly InitiateDataUpdate _tblUpdate;
+
 
         public Quicktest()
         {
-            _tblUpdate = new UpdateDbTables();
+            _tblUpdate = new InitiateDataUpdate();
         }
 
         [Test]

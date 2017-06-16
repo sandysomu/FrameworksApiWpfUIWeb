@@ -93,10 +93,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Conversion\UpdateModel.cs" />
+    <Compile Include="Conversion\ObjectConversions.cs" />
+    <Compile Include="Conversion\InitiateDataUpdate.cs" />
+    <Compile Include="DataMappings\DataMapper.cs" />
+    <Compile Include="DataMappings\IDataMapper.cs" />
     <Compile Include="IoC\IocConfiguration.cs" />
     <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="Services\BankingServiceUpdated.cs" />
     <Compile Include="Services\ITransactionService.cs" />
     <Compile Include="Services\TransactionService.cs" />
     <Compile Include="Test\Quicktest.cs" />
