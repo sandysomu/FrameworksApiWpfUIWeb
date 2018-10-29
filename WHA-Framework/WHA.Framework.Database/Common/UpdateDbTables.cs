@@ -23,6 +23,8 @@ namespace WHA.Framework.Database.Common
                     db.Entry(transaction).State = EntityState.Added;
                     db.SaveChanges();
                     db.Dispose();
+
+                  //  var id = (from w in db.tblTransactions orderby w select w.TransID).FirstOrDefault();
                     return true;
                 }
             }

@@ -23,8 +23,7 @@ namespace WHA.Framework.WebApi.Controllers
         [Route("Transactions/PostTransactionById")]
         public IHttpActionResult PostTransaction(Transaction model)
         {
-            var tem = model;
-            _transactionService.PostTransaction(model);
+          _transactionService.PostTransaction(model);
             return Ok();
         }
 
