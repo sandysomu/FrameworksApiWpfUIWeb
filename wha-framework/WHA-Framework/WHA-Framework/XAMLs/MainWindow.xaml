@@ -1,0 +1,66 @@
+﻿<Window x:Class="WHA_Framework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WHA_Framework"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="FirstWindow" Height="450" Width="625">
+    <Grid >
+        <Grid Margin="1,0,-1,0">
+            <TextBlock x:Name="FinanceListText" HorizontalAlignment="Left" Margin="14,360,0,0" TextWrapping="Wrap" Text="Financial Entity" VerticalAlignment="Top"/>
+            <ComboBox  x:Name="FinanceListComboBox" AutomationProperties.AutomationId="FinancialEntityList" Loaded="FinanceListComboBox_Loaded"  HorizontalAlignment="Left" Margin="11,386,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.033"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <TextBlock x:Name="TransType" HorizontalAlignment="Left" Margin="173,360,0,0" TextWrapping="Wrap" Text="Transaction Type" VerticalAlignment="Top"></TextBlock>
+            <ComboBox x:Name="TransTypeComboBox" AutomationProperties.AutomationId="TransTypeList" Loaded="TransTypeComboBox_Loaded" HorizontalAlignment="Left" Margin="173,387,0,0" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.5,0.5" Height="22">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.033"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <TextBlock x:Name="TransReason"  HorizontalAlignment="Left"  Margin="317,360,0,0" TextWrapping="Wrap" Text="Enter Trasaction Reason" VerticalAlignment="Top"/>
+            <TextBox x:Name="TransReasonTextBox" HorizontalAlignment="Left" Height="19" Margin="317,388,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146" />
+            <Button x:Name="SubmitButton" Content="Submit" Click="TransButton_Click" HorizontalAlignment="Left" Margin="499,385,0,0" VerticalAlignment="Top" Width="75"/>
+            <TextBlock x:Name="AccountNameText" HorizontalAlignment="Left" Margin="14,301,0,0" TextWrapping="Wrap" Text="AccountName" VerticalAlignment="Top"/>
+            <ComboBox x:Name="AccountNameCombo" AutomationProperties.AutomationId="AccountNameList" Loaded="AccountNameCombo_OnLoaded" HorizontalAlignment="Left" Margin="13,326,0,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.5,0.5" Height="22">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.033"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <TextBlock x:Name="AmountText" HorizontalAlignment="Left" Margin="173,304,0,0" TextWrapping="Wrap" Text="Enter Amount" VerticalAlignment="Top"/>
+            <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" Height="19" Margin="173,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
+            <Button x:Name="CommonWealthButton" Content="CWA"  HorizontalAlignment="Left" Margin="14,55,0,0" VerticalAlignment="Top" Width="93" Click="CommonWealthButton_Click" />
+            <Button x:Name="CitiButton" Content="CB"  HorizontalAlignment="Left" Margin="265,56,0,0" VerticalAlignment="Top" Width="104" Click="CitiButton_Click"/>
+            <Button x:Name="SelectButton" Content="Select Union"  HorizontalAlignment="Left" Margin="389,56,0,0" VerticalAlignment="Top" Width="99" Click="SelectButton_Click" />
+            <Button x:Name="HSBCButton" Content="HSBC"  HorizontalAlignment="Left" Margin="120,56,0,0" VerticalAlignment="Top" Width="126" Click="HSBCButton_Click"/>
+            <TextBlock x:Name="PageHeadingText" FontSize="20" FontStyle="Oblique" Background="Beige"  HorizontalAlignment="Center" Margin="163,13,249,0" 
+                   Text="William Hill Australia" VerticalAlignment="Top" Width="205"/>
+            <DataGrid x:Name="EntityDetails" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="27,109,0,0" VerticalAlignment="Top" Height="173" Width="523"/>
+            <Button x:Name="AllBankButton" Content="All"  HorizontalAlignment="Left" Margin="499,56,0,0" VerticalAlignment="Top" Width="51" Click="AllBankButton_Click" />
+        </Grid>
+
+        <!--<Grid Background="Aqua" Visibility="{Binding BalancePageVisible}">
+            <Label Content="Windows2"></Label>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="167,105,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        </Grid>-->
+
+    </Grid>
+</Window>
