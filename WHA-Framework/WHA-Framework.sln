@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA-Framework", "WHA-Framework\WHA-Framework.csproj", "{C3D1A171-FF26-449C-AD13-2BA93E40755B}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA.Framework.Database", "WHA.Framework.Database\WHA.Framework.Database.csproj", "{C297DF6B-1A18-4263-B96C-8C1F11712B29}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA.UIFramework", "WHA.UIFramework\WHA.UIFramework.csproj", "{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFramework", "ApiFramework\ApiFramework.csproj", "{65573786-9177-4F8B-A566-24EDBF219CF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65573786-9177-4F8B-A566-24EDBF219CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65573786-9177-4F8B-A566-24EDBF219CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65573786-9177-4F8B-A566-24EDBF219CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65573786-9177-4F8B-A566-24EDBF219CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CEF0E5E6-F93B-45B7-98C4-83E71258532F}
 	EndGlobalSection
 EndGlobal
