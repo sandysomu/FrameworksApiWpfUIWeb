@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WHA_Framework
+namespace WpfApplication.XAMLs
 {
     /// <summary>
     /// Interaction logic for App.xaml

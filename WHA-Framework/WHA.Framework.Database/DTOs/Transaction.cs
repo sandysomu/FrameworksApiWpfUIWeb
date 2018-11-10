@@ -1,7 +1,7 @@
 ﻿using System;
 
 //namespace WHA_Framework.Models
-namespace WHA.Framework.Database.DTOs
+namespace EntityDatabase.DTOs
 {
 
     public class Transaction

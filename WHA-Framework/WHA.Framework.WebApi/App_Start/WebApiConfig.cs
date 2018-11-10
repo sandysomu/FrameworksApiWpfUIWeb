@@ -1,7 +1,7 @@
 ﻿using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 
-namespace WHA.Framework.WebApi
+namespace WpfAPI
 {
     public static class WebApiConfig
     {

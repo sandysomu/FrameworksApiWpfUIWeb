@@ -1,7 +1,6 @@
-﻿using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
+﻿using EntityDatabase.DataModel;
 
-namespace WHA.Framework.Database.Common
+namespace EntityDatabase.Common
 {
     public interface IUpdateDbTables
     {

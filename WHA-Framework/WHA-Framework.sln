@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA-Framework", "WHA-Framework\WHA-Framework.csproj", "{C3D1A171-FF26-449C-AD13-2BA93E40755B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication", "WHA-Framework\WpfApplication.csproj", "{C3D1A171-FF26-449C-AD13-2BA93E40755B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA.Framework.WebApi", "WHA.Framework.WebApi\WHA.Framework.WebApi.csproj", "{67DDA3E6-F4E4-479E-AD24-06407A11AFC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAPI", "WHA.Framework.WebApi\WpfAPI.csproj", "{67DDA3E6-F4E4-479E-AD24-06407A11AFC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA.Framework.Database", "WHA.Framework.Database\WHA.Framework.Database.csproj", "{C297DF6B-1A18-4263-B96C-8C1F11712B29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityDatabase", "WHA.Framework.Database\EntityDatabase.csproj", "{C297DF6B-1A18-4263-B96C-8C1F11712B29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WHA.UIFramework", "WHA.UIFramework\WHA.UIFramework.csproj", "{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfUiFramework", "WHA.UIFramework\WpfUiFramework.csproj", "{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiFramework", "ApiFramework\ApiFramework.csproj", "{65573786-9177-4F8B-A566-24EDBF219CF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiFramework", "ApiFramework\ApiFramework.csproj", "{65573786-9177-4F8B-A566-24EDBF219CF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

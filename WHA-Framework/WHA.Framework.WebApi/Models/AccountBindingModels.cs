@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WHA.Framework.WebApi.Models
+namespace WpfAPI.Models
 {
     // Models used as parameters to AccountController actions.
 

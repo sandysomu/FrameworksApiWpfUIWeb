@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace WHA.Framework.WebApi
+namespace WpfAPI
 {
     public class FilterConfig
     {

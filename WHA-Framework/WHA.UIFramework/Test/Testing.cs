@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Linq;
 using NUnit.Framework;
-using TestStack.White;
 using TestStack.White.UIItems;
-using TestStack.White.UIItems.Finders;
-using TestStack.White.UIItems.ListBoxItems;
-using TestStack.White.UIItems.WindowItems;
-using WHA.UIFramework.Common;
-using WHA.UIFramework.Screens;
+using WpfUiFramework.Screens;
 using Debug = System.Diagnostics.Debug;
 
 
-namespace WHA.UIFramework.Test
+namespace WpfUiFramework.Test
 {
     public class Testing : MainWinControls
     {

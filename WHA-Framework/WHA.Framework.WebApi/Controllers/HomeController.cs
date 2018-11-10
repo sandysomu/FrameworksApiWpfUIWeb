@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace WHA.Framework.WebApi.Controllers
+namespace WpfAPI.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,4 +1,4 @@
-﻿namespace WHA_Framework.DataMappings
+﻿namespace WpfApplication.DataMappings
 {
     public interface IDataMapper
     {

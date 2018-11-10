@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WHA.Framework.Database.DataModel
+namespace EntityDatabase.DataModel
 {
     using System;
     using System.Data.Entity;

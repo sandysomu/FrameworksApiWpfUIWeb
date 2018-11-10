@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
+﻿using System.Collections.Generic;
+using EntityDatabase.DTOs;
 
-namespace WHA_Framework.Services
+namespace WpfApplication.Services
 {
     public interface ITransactionService
     {

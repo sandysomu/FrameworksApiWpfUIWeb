@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using WHA_Framework.Services;
+using WpfApplication.Services;
 
-namespace WHA.Framework.WebApi.Test
+namespace WpfAPI.Test
 {
     [TestFixture]
     public class Testing

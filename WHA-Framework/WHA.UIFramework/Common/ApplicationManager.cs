@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Configuration;
 using System.IO;
 using TestStack.White;
 
-namespace WHA.UIFramework.Common
+namespace WpfUiFramework.Common
 {
     public static class ApplicationManager
     {

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Data.Entity;
-using System.Linq;
+using EntityDatabase.DataModel;
 
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-
-
-
-namespace WHA.Framework.Database.Common
+namespace EntityDatabase.Common
 {
     public class UpdateDbTables : IUpdateDbTables
     {

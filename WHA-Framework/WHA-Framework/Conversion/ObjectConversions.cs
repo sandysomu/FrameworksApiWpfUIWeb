@@ -1,9 +1,7 @@
-﻿using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.Utilities;
-using System.Linq;
+﻿using EntityDatabase.DTOs;
+using WpfApplication.Services;
 
-namespace WHA_Framework.Conversion
+namespace WpfApplication.Conversion
 {
     public class ObjectConversions 
     {

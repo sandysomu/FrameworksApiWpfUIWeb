@@ -2,7 +2,7 @@
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 
-namespace WHA.UIFramework.Common
+namespace WpfUiFramework.Common
 {
    
         public static class Extensions

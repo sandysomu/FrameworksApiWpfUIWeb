@@ -1,9 +1,10 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using WpfAPI;
 
-[assembly: OwinStartup(typeof(WHA.Framework.WebApi.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
-namespace WHA.Framework.WebApi
+namespace WpfAPI
 {
     public partial class Startup
     {

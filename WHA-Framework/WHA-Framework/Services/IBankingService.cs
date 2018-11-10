@@ -1,6 +1,6 @@
-﻿using WHA.Framework.Database.DataModel;
+﻿using EntityDatabase.DataModel;
 
-namespace WHA_Framework.Utilities
+namespace WpfApplication.Services
 {
     public interface IBankingService
     {

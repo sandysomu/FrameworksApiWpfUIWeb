@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using Autofac;
-using WHA.Framework.Database.Common;
-using WHA_Framework.DataMappings;
-using WHA_Framework.Services;
-using WHA_Framework.Utilities;
+using EntityDatabase.Common;
+using WpfApplication.DataMappings;
+using WpfApplication.Services;
 
-namespace WHA_Framework.IoC
+namespace WpfApplication.IoC
 {
     public static class IocConfiguration
     {

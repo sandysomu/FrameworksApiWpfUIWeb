@@ -4,10 +4,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using WHA.Framework.WebApi.Providers;
-using WHA.Framework.WebApi.Models;
+using WpfAPI.Models;
+using WpfAPI.Providers;
 
-namespace WHA.Framework.WebApi
+namespace WpfAPI
 {
     public partial class Startup
     {

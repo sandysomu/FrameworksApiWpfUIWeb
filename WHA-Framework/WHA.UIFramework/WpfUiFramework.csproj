@@ -7,8 +7,8 @@
     <ProjectGuid>{DF749B75-FAD5-4269-83D8-68EBAD3F6FFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WHA.UIFramework</RootNamespace>
-    <AssemblyName>WHA.UIFramework</AssemblyName>
+    <RootNamespace>WpfUiFramework</RootNamespace>
+    <AssemblyName>WpfUiFramework</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -67,9 +67,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WHA.Framework.Database\WHA.Framework.Database.csproj">
+    <ProjectReference Include="..\WHA.Framework.Database\EntityDatabase.csproj">
       <Project>{C297DF6B-1A18-4263-B96C-8C1F11712B29}</Project>
-      <Name>WHA.Framework.Database</Name>
+      <Name>EntityDatabase</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,11 +1,11 @@
 ﻿using Autofac;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.IoC;
-using WHA.Framework.Database.Common;
-using WHA_Framework.DataMappings;
+using EntityDatabase.Common;
+using EntityDatabase.DataModel;
+using EntityDatabase.DTOs;
+using WpfApplication.DataMappings;
+using WpfApplication.IoC;
 
-namespace WHA_Framework.Conversion
+namespace WpfApplication.Conversion
 {
 
     public class InitiateDataUpdate

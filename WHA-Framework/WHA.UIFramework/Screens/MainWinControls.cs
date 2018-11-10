@@ -1,15 +1,11 @@
 ﻿using System;
-
-using TestStack.White;
 using TestStack.White.UIItems;
 using TestStack.White.UIItems.Finders;
 using TestStack.White.UIItems.ListBoxItems;
 using TestStack.White.UIItems.WindowItems;
-using WHA.UIFramework.Common;
+using WpfUiFramework.Common;
 
-
-
-namespace WHA.UIFramework.Screens
+namespace WpfUiFramework.Screens
 {
     public class MainWinControls
     {

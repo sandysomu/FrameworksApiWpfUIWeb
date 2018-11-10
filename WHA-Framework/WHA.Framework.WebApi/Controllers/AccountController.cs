@@ -12,11 +12,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using WHA.Framework.WebApi.Models;
-using WHA.Framework.WebApi.Providers;
-using WHA.Framework.WebApi.Results;
+using WpfAPI.Models;
+using WpfAPI.Providers;
+using WpfAPI.Results;
 
-namespace WHA.Framework.WebApi.Controllers
+namespace WpfAPI.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

@@ -6,9 +6,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using WHA.Framework.WebApi.Models;
+using WpfAPI.Models;
 
-namespace WHA.Framework.WebApi.Providers
+namespace WpfAPI.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

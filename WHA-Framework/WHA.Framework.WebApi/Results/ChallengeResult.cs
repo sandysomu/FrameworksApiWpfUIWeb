@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace WHA.Framework.WebApi.Results
+namespace WpfAPI.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

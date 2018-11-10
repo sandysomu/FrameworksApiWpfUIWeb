@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 
-namespace WHA.Framework.WebApi.Controllers
+namespace WpfAPI.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

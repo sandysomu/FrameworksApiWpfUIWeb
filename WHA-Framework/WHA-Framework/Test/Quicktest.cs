@@ -1,12 +1,10 @@
 ﻿using System;
+using EntityDatabase.DTOs;
 using NUnit.Framework;
-using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.Conversion;
-using WHA_Framework.DataMappings;
+using WpfApplication.Conversion;
+using WpfApplication.DataMappings;
 
-namespace WHA.Test
+namespace WpfApplication.Test
 {
     [TestFixture]
     class Quicktest

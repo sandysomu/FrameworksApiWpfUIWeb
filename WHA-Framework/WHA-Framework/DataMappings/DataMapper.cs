@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
+using EntityDatabase.DataModel;
+using EntityDatabase.DTOs;
 
-namespace WHA_Framework.DataMappings
+namespace WpfApplication.DataMappings
 {
     public class DataMapper : IDataMapper
     {

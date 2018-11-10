@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Transactions;
 using System.Windows;
 using System.Windows.Controls;
 using Autofac;
-using NUnit.Framework;
-using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.Conversion;
-using WHA_Framework.IoC;
-using WHA_Framework.Services;
-using WHA_Framework.Utilities;
-using Transaction = WHA.Framework.Database.DTOs.Transaction;
+using EntityDatabase.Common;
+using EntityDatabase.DataModel;
+using WpfApplication.Conversion;
+using WpfApplication.IoC;
+using WpfApplication.Services;
+using Transaction = EntityDatabase.DTOs.Transaction;
 
-namespace WHA_Framework
+namespace WpfApplication.XAMLs
 {
 
     public partial class MainWindow : Window

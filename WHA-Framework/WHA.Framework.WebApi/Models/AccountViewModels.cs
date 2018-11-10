@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WHA.Framework.WebApi.Models
+namespace WpfAPI.Models
 {
     // Models returned by AccountController actions.
 

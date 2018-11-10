@@ -1,7 +1,6 @@
 ﻿using System;
 
-
-namespace  WHA.Framework.Database.DTOs
+namespace  EntityDatabase.DTOs
 
 {
     public class EachEntityTran

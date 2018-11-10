@@ -1,11 +1,7 @@
 ﻿using System.Linq;
-using System.Transactions;
-using WHA.Framework.Database.DataModel;
-using WHA_Framework.Conversion;
-using WHA_Framework.Services;
+using EntityDatabase.DataModel;
 
-
-namespace WHA_Framework.Utilities
+namespace WpfApplication.Services
 {
     public class BankingService : IBankingService
     {

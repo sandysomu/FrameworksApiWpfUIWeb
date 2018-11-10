@@ -2,13 +2,10 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using ApiFramework.BaseObjects;
 using Newtonsoft.Json;
 using RestSharp;
 using Xunit;
-
-
-
-
 
 
 namespace ApiFramework
@@ -17,40 +14,19 @@ namespace ApiFramework
     {
         string url = "http://eventmanagement.uat.prod.sbet.com.au/";
 
-        [Fact]
-        public void RestSharpTest()
-        {
-            
-            var client = new RestClient(url);
-
-            var request = new RestRequest("api/eventmanagement/v1/venues/12", Method.GET);
-
-            request.AddHeader("Accept", "application/json");
-            request.AddHeader("X-WHA-System-ID", "Swagger-Test");
-            request.AddHeader("X-WHA-Message-ID", "Message-ID-124");
-
-            IRestResponse response = client.Execute(request);
-
-            RootObject root = JsonConvert.DeserializeObject<RootObject>(response.Content);
-        }
-
+        private ResourceObject resourceObject = new ResourceObject();
         [Fact]
         public async Task HttpClientGetTest()
         {
 
-            var client = new HttpClient();
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-            client.DefaultRequestHeaders.Add("X-WHA-System-ID", "Swagger-Test");
-            client.DefaultRequestHeaders.Add("X-WHA-Message-ID", "Message-ID-124");
-
-            client.BaseAddress = new Uri(url);
-
-            var response = await client.GetAsync("api/eventmanagement/v1/venues/12");
+            var response = await resourceObject.GetVenuesList(url);
 
             response.EnsureSuccessStatusCode();
 
-            var myRootObject = await response.Content.ReadAsAsync<RootObject>();
+            var myRootObject = await response.Content.ReadAsAsync<RootObjectModel>();
         }
+
+        
 
 
         [Fact]
@@ -94,9 +70,26 @@ namespace ApiFramework
             // return await Task.Run(() = &gt; JsonObject.Parse(content));
         }
 
+        [Fact]
+        public void RestSharpTest()
+        {
+
+            var client = new RestClient(url);
+
+            var request = new RestRequest("api/eventmanagement/v1/venues/12", Method.GET);
+
+            request.AddHeader("Accept", "application/json");
+            request.AddHeader("X-WHA-System-ID", "Swagger-Test");
+            request.AddHeader("X-WHA-Message-ID", "Message-ID-124");
+
+            IRestResponse response = client.Execute(request);
+
+            RootObjectModel root = JsonConvert.DeserializeObject<RootObjectModel>(response.Content);
+        }
+
     }
 
-    public class RootObject
+    public class RootObjectModel
     {
         public int id { get; set; }
         public int eventType { get; set; }

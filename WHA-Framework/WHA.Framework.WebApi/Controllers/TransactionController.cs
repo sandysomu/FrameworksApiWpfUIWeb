@@ -1,8 +1,8 @@
 ﻿using System.Web.Http;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.Services;
+using EntityDatabase.DTOs;
+using WpfApplication.Services;
 
-namespace WHA.Framework.WebApi.Controllers
+namespace WpfAPI.Controllers
 {
     public class TransactionController : ApiController
     {

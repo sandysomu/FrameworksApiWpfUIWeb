@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WHA.Framework.Database.Common;
-using WHA.Framework.Database.DataModel;
-using WHA.Framework.Database.DTOs;
-using WHA_Framework.Conversion;
-using WHA_Framework.DataMappings;
+using EntityDatabase.DataModel;
+using EntityDatabase.DTOs;
+using WpfApplication.Conversion;
+using WpfApplication.DataMappings;
 
-
-namespace WHA_Framework.Services
+namespace WpfApplication.Services
 {
     public class TransactionService : ITransactionService
     {
